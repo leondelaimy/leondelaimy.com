@@ -31,7 +31,6 @@ export const StyledButton = styled.div<{ primary?: boolean }>`
     border-style: solid;
     border-width: 2px;
     border-color: ${({ theme }) => theme.colors.pastelRed};
-    transition: color 1s ease-out;
     transition: border-color 1s ease-out;
   }
 
@@ -46,7 +45,6 @@ export const StyledButton = styled.div<{ primary?: boolean }>`
     border-width: 2px;
     border-style: solid;
     border-color: ${({ theme }) => theme.colors.pastelRed};
-    transition: color 1s ease-out;
     transition: border-color 1s ease-out;
   }
 
@@ -55,7 +53,6 @@ export const StyledButton = styled.div<{ primary?: boolean }>`
     color: ${({ theme }) => theme.colors.zimaBlue};
     background: ${({ theme }) => theme.background};
     border-color: ${({ theme }) => theme.colors.zimaBlue};
-    transition: color 0.23s linear;
     transition: border-color 0.23s linear;
   }
 
