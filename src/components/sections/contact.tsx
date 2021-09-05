@@ -14,7 +14,7 @@ const StyledContact = styled.section`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  min-height: calc(100vh - 109px);
+  min-height: calc(100vh - 113px);
 
   p {
     padding: 0 30px 0 30px;
