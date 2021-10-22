@@ -140,11 +140,9 @@ const CVBtn = ({ show }: ICVBtnProps) => {
       <StyledButton primary>
         <div className="btn-wrapper">
           <ul>
-            <li>
-              <a className="link" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                CV
-              </a>
-            </li>
+            <a className="link" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <li>CV</li>
+            </a>
           </ul>
         </div>
       </StyledButton>

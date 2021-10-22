@@ -19,19 +19,13 @@ export const StyledButton = styled.div<{ primary?: boolean }>`
     overflow: hidden;
     width: 350px;
     height: 54.5px;
-    clip-path: polygon(
-      100% 0%,
-      100% 53%,
-      92% 104.5%,
-      0% 104.5%,
-      0% 0%
-    );
+    clip-path: polygon(100% 0%, 100% 53%, 92% 104.5%, 0% 104.5%, 0% 0%);
     font-size: 26px;
-    text-shadow: 0px 0px 3px ${({ theme }) => theme.colors.pastelRed};
+    color: ${({ primary, theme }) => (primary ? theme.colors.pastelRed : theme.colors.lightGrey)};
     border-style: solid;
     border-width: 2px;
     border-color: ${({ theme }) => theme.colors.pastelRed};
-    transition: border-color 1s ease-out;
+    transition: all 1s ease-out;
   }
 
   .btn-wrapper ul li::after {
@@ -45,22 +39,13 @@ export const StyledButton = styled.div<{ primary?: boolean }>`
     border-width: 2px;
     border-style: solid;
     border-color: ${({ theme }) => theme.colors.pastelRed};
-    transition: border-color 1s ease-out;
+    transition: all 1s ease-out;
   }
 
   .btn-wrapper ul li:hover::after,
   .btn-wrapper ul li:hover {
     color: ${({ theme }) => theme.colors.zimaBlue};
-    background: ${({ theme }) => theme.background};
     border-color: ${({ theme }) => theme.colors.zimaBlue};
-    transition: border-color 0.23s linear;
+    transition: all 0.23s linear;
   }
-
-  .btn-wrapper ul li .link {
-    color: ${({ primary, theme }) => (primary ? theme.colors.pastelRed : theme.colors.lightGrey)};
-    text-decoration: none;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    &:hover {
-      color: ${({ theme }) => theme.colors.zimaBlue};
-    }
 `

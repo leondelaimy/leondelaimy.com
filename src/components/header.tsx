@@ -51,10 +51,13 @@ const FindOutMoreBtn = () => {
     <StyledButton primary>
       <div className="btn-wrapper">
         <ul>
-          <li>
-            <button className="link" onClick={() => scrollTo('#about')}>
-              Find out more
-            </button>
+          <li
+            tabIndex={0}
+            onClick={() => scrollTo('#about')}
+            onKeyDown={() => null}
+            role="button" // eslint-disable-line jsx-a11y/no-noninteractive-element-to-interactive-role
+          >
+            Find out more
           </li>
         </ul>
       </div>

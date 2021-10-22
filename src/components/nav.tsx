@@ -100,10 +100,14 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen }) => {
             <ul>
               {routes.map(({ name, route }, i) => {
                 return (
-                  <li key={i.toString()}>
-                    <button className="link" onClick={() => handleNavigation(route, setMenuOpen)}>
-                      {name}
-                    </button>
+                  <li
+                    key={i}
+                    tabIndex={i}
+                    onClick={() => handleNavigation(route, setMenuOpen)}
+                    onKeyDown={() => null}
+                    role="button" // eslint-disable-line jsx-a11y/no-noninteractive-element-to-interactive-role
+                  >
+                    {name}
                   </li>
                 )
               })}
