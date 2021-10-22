@@ -39,6 +39,7 @@ const ExperienceTitle = styled(Title)`
 const Position = styled(Title)`
   padding: 0 15px 0 30px;
   margin: 0;
+  font-weight: normal;
 `
 
 const Job = styled(Title)`
