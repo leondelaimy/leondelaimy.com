@@ -13,13 +13,6 @@ const ProjectsTitle = styled(Title)`
 const B2B = styled(Title)`
   padding: 0 30px 0 30px;
   margin: 0;
-
-  a {
-    color: ${({ theme }) => theme.colors.pastelRed};
-    &:hover {
-      color: ${({ theme }) => theme.colors.zimaBlue};
-    }
-  }
 `
 
 const StyledProjects = styled.section`

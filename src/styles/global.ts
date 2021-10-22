@@ -26,11 +26,11 @@ export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
     display:block;
     width:100%;
     height:100%;
-    color: ${({ theme }) => theme.colors.zimaBlue};
+    color: ${({ theme }) => theme.colors.pastelRed};
     text-decoration: none;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     &:hover {
-      color: ${({ theme }) => theme.colors.pastelRed};
+      color: ${({ theme }) => theme.colors.zimaBlue};
     }
   }
 

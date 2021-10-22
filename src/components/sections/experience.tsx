@@ -3,6 +3,33 @@ import styled from 'styled-components'
 import { Title } from '@components'
 import { StyledButton } from '@styles'
 
+const experience = [
+  {
+    name: 'Infinity Works',
+    position: 'Software Consultant',
+    url: 'https://www.infinityworks.com',
+    dates: 'Oct 2021 - Present',
+  },
+  {
+    name: 'Visfo',
+    position: 'Software Engineer',
+    url: 'https://visformatics.net',
+    dates: 'Sep 2018 - Oct 2021',
+  },
+  {
+    name: 'Northcoders',
+    position: 'Trainee Full Stack Developer',
+    url: 'https://northcoders.com',
+    dates: 'Feb 2018 - May 2018',
+  },
+  {
+    name: 'University of Manchester',
+    position: 'Biomedical Sciences',
+    url: 'https://www.manchester.ac.uk',
+    dates: 'Sep 2014 - June 2017',
+  },
+]
+
 const ExperienceTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
   padding: 0 30px 0 30px;
@@ -17,6 +44,11 @@ const Position = styled(Title)`
 const Job = styled(Title)`
   padding: 0;
   margin: 0;
+  color: ${({ theme }) => theme.colors.pastelRed};
+
+  @media only screen and (max-width: 992px) {
+    padding: 0 15px 0 30px;
+  }
 `
 
 const StyledExperience = styled.section`
@@ -27,12 +59,17 @@ const StyledExperience = styled.section`
   min-height: 100vh;
   max-width: 750px;
 
-  .job {
-    display: flex;
+  .experience-wrapper {
+    margin: 20px 0 0 0;
   }
 
-  .bullet-points {
+  .job {
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  .date {
+    margin: 0 0 15px 0;
   }
 
   ul {
@@ -42,13 +79,7 @@ const StyledExperience = styled.section`
   p {
     padding: 0 30px 0 30px;
     line-height: 1.8;
-    font-size: 12px;
-  }
-
-  @media only screen and (min-width: 992px) {
-    p {
-      font-size: 16px;
-    }
+    margin: 0;
   }
 
   .btn-wrapper {
@@ -60,67 +91,62 @@ const StyledExperience = styled.section`
 export const Experience: React.FC = () => {
   return (
     <StyledExperience id="experience">
-      <ExperienceTitle headingLevel="h4">Experience</ExperienceTitle>
-      <div className="job">
-        <Position headingLevel="h5">Software Engineer @ </Position>
-        <JobLink />
+      <div>
+        <ExperienceTitle headingLevel="h4">Experience</ExperienceTitle>
+        <div className="experience-wrapper">
+          {experience.map((job, i) => {
+            return (
+              <div key={i}>
+                <div className="job">
+                  <Position headingLevel="h5">{`${job.position} @ `}</Position>
+                  <ExperienceLink name={job.name} url={job.url} />
+                </div>
+                <div className="date">
+                  <p>{job.dates}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <div className="bullet-points">
-        <Summary />
-      </div>
-      <CVBtn />
+      <CVBtn show={false} />
     </StyledExperience>
   )
 }
 
-const JobLink = () => {
+interface IExperienceLinkProps {
+  name: string
+  url: string
+}
+
+const ExperienceLink = ({ name, url }: IExperienceLinkProps) => {
   return (
     <Job headingLevel="h5">
-      <a href="https://visformatics.net" target="_blank" rel="noreferrer">
-        Visformatics
+      <a href={url} target="_blank" rel="noreferrer">
+        {name}
       </a>
     </Job>
   )
 }
 
-const CVBtn = () => {
-  return (
-    <StyledButton primary>
-      <div className="btn-wrapper">
-        <ul>
-          <li>
-            <a className="link" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-              CV
-            </a>
-          </li>
-        </ul>
-      </div>
-    </StyledButton>
-  )
+interface ICVBtnProps {
+  show: boolean
 }
 
-const Summary = () => {
-  return (
-    <ul>
-      <li>
-        <p>
-          Communicating and collaborating with multi-disciplinary, cross functional teams of engineers, designers, data
-          scientists, managers and stakeholders on a daily basis
-        </p>
-      </li>
-      <li>
-        <p>
-          Developing and shipping across the stack, working on databases, backend APIs, frontends and infrastructure
-          deployments
-        </p>
-      </li>
-      <li>
-        <p>
-          Involved in the full life cycle of product development, with responsibility in gathering requirements,
-          documentation, data modelling, designing and testing in all projects, striving for code quality, robust
-          architecture and extensibility
-        </p>
-      </li>
-    </ul>
-  )
+const CVBtn = ({ show }: ICVBtnProps) => {
+  return show ? (
+    <>
+      <StyledButton primary>
+        <div className="btn-wrapper">
+          <ul>
+            <li>
+              <a className="link" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      </StyledButton>
+    </>
+  ) : null
 }

@@ -44,11 +44,11 @@ const StyledHeading = styled.div`
     }
 
     h5 {
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
 
     h6 {
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
   }
 `
