@@ -43,7 +43,7 @@ const GetInTouchBtn = () => {
     <StyledButton primary>
       <div className="btn-wrapper">
         <ul>
-          <a className="link" href="mailto:leondel.coding@gmail.com">
+          <a href="mailto:leondel.coding@gmail.com">
             <li>Get in touch</li>
           </a>
         </ul>
