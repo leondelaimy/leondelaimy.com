@@ -41,11 +41,9 @@ const GoBackBtn = () => {
     <StyledButton primary>
       <div className="btn-wrapper">
         <ul>
-          <li>
-            <Link className="link" to="/">
-              Go back
-            </Link>
-          </li>
+          <Link to="/">
+            <li>Go back</li>
+          </Link>
         </ul>
       </div>
     </StyledButton>
