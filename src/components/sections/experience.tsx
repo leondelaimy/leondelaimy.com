@@ -6,7 +6,7 @@ import { StyledButton } from '@styles'
 const experience = [
   {
     name: 'Infinity Works',
-    position: 'Software Consultant',
+    position: 'Consultant',
     url: 'https://www.infinityworks.com',
     dates: 'Oct 2021 - Present',
   },
