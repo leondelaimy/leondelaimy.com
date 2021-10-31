@@ -26,6 +26,7 @@
   "dependencies": {
     "@react-spring/web": "^9.3.0",
     "babel-plugin-styled-components": "^1.13.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "gatsby": "^4.0.2",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-image": "^2.0.0",
