@@ -36,7 +36,7 @@ const StyledHeader = styled.header`
     padding: 10px;
   }
 
-  text {
+  .text {
     margin-left: 1rem;
   }
 `
