@@ -9,10 +9,6 @@ const MyNameIs = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
   padding: 10px;
   margin: 3rem 0 0 0;
-
-  @media only screen and (max-width: 992px) {
-    margin-left: 1rem;
-  }
 `
 
 const Name = styled(Title)`
@@ -20,7 +16,7 @@ const Name = styled(Title)`
   margin: 0;
 
   @media only screen and (max-width: 992px) {
-    margin-left: 1rem;
+    padding: 8px;
   }
 `
 
@@ -40,10 +36,8 @@ const StyledHeader = styled.header`
     padding: 10px;
   }
 
-  @media only screen and (max-width: 992px) {
-    p {
-      margin-left: 1rem;
-    }
+  text {
+    margin-left: 1rem;
   }
 `
 
@@ -51,9 +45,11 @@ export const Header: React.FC = () => {
   return (
     <StyledHeader id="intro">
       <Trail open={true}>
-        <MyNameIs headingLevel="h5">Hey, my name is</MyNameIs>
-        <Name headingLevel="h2">Leon Delaimy</Name>
-        <p>I&apos;m a software engineer with full stack experience</p>
+        <div className="text">
+          <MyNameIs headingLevel="h5">Hey, my name is</MyNameIs>
+          <Name headingLevel="h2">Leon Delaimy</Name>
+          <p>I&apos;m a software engineer with full stack experience</p>
+        </div>
         <FindOutMoreBtn />
       </Trail>
     </StyledHeader>
