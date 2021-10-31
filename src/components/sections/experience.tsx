@@ -73,10 +73,6 @@ const StyledExperience = styled.section`
     margin: 0 0 30px 0;
   }
 
-  ul {
-    list-style-type: '-';
-  }
-
   p {
     padding: 0 30px 0 30px;
     line-height: 1.8;
