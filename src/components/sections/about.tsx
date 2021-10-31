@@ -75,7 +75,7 @@ export const About: React.FC = () => {
           <AboutTitle headingLevel="h4">About me</AboutTitle>
           <p>
             I&apos;m a software engineer based in Manchester, passionate about science and tech. I&apos;m currently
-            working as a consultant with
+            working as a consultant with&nbsp;
             <a href="https://www.infinityworks.com" target="_blank" rel="noreferrer">
               Infinity Works
             </a>
