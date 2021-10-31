@@ -9,11 +9,19 @@ const MyNameIs = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
   padding: 10px;
   margin: 3rem 0 0 0;
+
+  @media only screen and (max-width: 992px) {
+    margin-left: 1rem;
+  }
 `
 
 const Name = styled(Title)`
   padding: 5px;
   margin: 0;
+
+  @media only screen and (max-width: 992px) {
+    margin-left: 1rem;
+  }
 `
 
 const StyledHeader = styled.header`
@@ -30,6 +38,12 @@ const StyledHeader = styled.header`
 
   p {
     padding: 10px;
+  }
+
+  @media only screen and (max-width: 992px) {
+    p {
+      margin-left: 1rem;
+    }
   }
 `
 
