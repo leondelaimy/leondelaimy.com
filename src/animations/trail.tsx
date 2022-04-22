@@ -1,7 +1,12 @@
 import React from 'react'
 import { useTrail, animated } from '@react-spring/web'
 
-export const Trail: React.FC<{ open: boolean }> = ({ open, children }) => {
+interface ITrailProps {
+  open: boolean
+  children: React.ReactNode
+}
+
+export const Trail: React.FC<ITrailProps> = ({ open, children }) => {
   const items = React.Children.toArray(children)
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
