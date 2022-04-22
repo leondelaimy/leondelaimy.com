@@ -13,7 +13,7 @@ const experience = [
   {
     name: 'Visfo',
     position: 'Software Engineer',
-    url: 'https://visformatics.net',
+    url: 'https://visfo.health',
     dates: 'Sep 2018 - Oct 2021',
   },
   {
@@ -47,7 +47,7 @@ const Job = styled(Title)`
   margin: 0;
   color: ${({ theme }) => theme.colors.pastelRed};
 
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 845px) {
     padding: 0 15px 0 30px;
   }
 `
@@ -67,6 +67,12 @@ const StyledExperience = styled.section`
   .job {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  @media only screen and (max-width: 843px) {
+    .position {
+      width: 100%;
+    }
   }
 
   .date {
@@ -95,7 +101,9 @@ export const Experience: React.FC = () => {
             return (
               <div key={i}>
                 <div className="job">
-                  <Position headingLevel="h5">{`${job.position} @ `}</Position>
+                  <div className="position">
+                    <Position headingLevel="h5">{job.position}</Position>
+                  </div>
                   <ExperienceLink name={job.name} url={job.url} />
                 </div>
                 <div className="date">
