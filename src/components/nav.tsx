@@ -16,10 +16,6 @@ const routes = [
     route: '#experience',
   },
   {
-    name: 'Projects',
-    route: '#projects',
-  },
-  {
     name: 'Contact',
     route: '#contact',
   },
