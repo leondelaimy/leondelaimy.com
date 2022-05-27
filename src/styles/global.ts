@@ -9,13 +9,12 @@ import svg from './fonts/ShareTechMono.svg'
 export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
   @font-face {
     font-family: 'Share Tech Mono';
-    src: url(${eot}); /* IE9 Compat Modes */
-    src: local(''),
-         url('${eot}?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url(${woff2}) format('woff2'), /* Super Modern Browsers */
-         url(${woff}) format('woff'), /* Pretty Modern Browsers */
-         url(${ttf})  format('truetype'), /* Safari, Android, iOS */
-         url(${svg}#ShareTechMono') format('svg'); /* Legacy iOS */
+    src: url('${eot}'); /* IE9 Compat Modes */
+    src: url('${eot}?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('${woff2}') format('woff2'), /* Super Modern Browsers */
+         url('${woff}') format('woff'), /* Pretty Modern Browsers */
+         url('${ttf}')  format('truetype'), /* Safari, Android, iOS */
+         url('${svg}#ShareTechMono') format('svg'); /* Legacy iOS */
     font-style: normal;
     font-weight: 300;
     font-display: fallback;
