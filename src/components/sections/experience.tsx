@@ -18,7 +18,7 @@ const experience = [
   },
   {
     name: 'Northcoders',
-    position: 'Trainee Full Stack Developer',
+    position: 'Trainee Full Stack Engineer',
     url: 'https://northcoders.com',
     dates: 'Feb 2018 - May 2018',
   },
