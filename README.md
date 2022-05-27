@@ -7,7 +7,7 @@
 <p align="center">
   My personal website written in <a href="https://reactjs.org">React</a>, built using <a href="https://www.gatsbyjs.com/why-gatsby/">Gatsby</a> and hosted with <a href="https://firebase.google.com">Firebase</a></p>
 
-![image](https://user-images.githubusercontent.com/54955669/131023953-98c88533-6253-44a7-b0b5-0d19dc933112.png)
+![Screenshot 2022-05-27 at 14 34 54](https://user-images.githubusercontent.com/54955669/170709955-258a4c82-019f-45ab-85a0-07f5a6f02979.png)
 
 ## Running locally
 
