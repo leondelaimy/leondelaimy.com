@@ -5,7 +5,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
   @font-face {
     font-family: 'Share Tech Mono';
     src: url('./fonts/ShareTechMono.eot'); /* IE9 Compat Modes */
-    src: url('./fonts/ShareTechMono.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    src: local(''),
+         url('./fonts/ShareTechMono.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          url('./fonts/ShareTechMono.woff2') format('woff2'), /* Super Modern Browsers */
          url('./fonts/ShareTechMono.woff') format('woff'), /* Pretty Modern Browsers */
          url('./fonts/ShareTechMono.ttf')  format('truetype'), /* Safari, Android, iOS */
