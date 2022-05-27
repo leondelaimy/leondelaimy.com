@@ -1,16 +1,21 @@
 import { createGlobalStyle } from 'styled-components'
 import { ITheme } from '@styles'
+import woff from './fonts/ShareTechMono.woff'
+import woff2 from './fonts/ShareTechMono.woff2'
+import ttf from './fonts/ShareTechMono.ttf'
+import eot from './fonts/ShareTechMono.eot'
+import svg from './fonts/ShareTechMono.svg'
 
 export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
   @font-face {
     font-family: 'Share Tech Mono';
-    src: url('./fonts/ShareTechMono.eot'); /* IE9 Compat Modes */
+    src: url(${eot}); /* IE9 Compat Modes */
     src: local(''),
-         url('./fonts/ShareTechMono.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('./fonts/ShareTechMono.woff2') format('woff2'), /* Super Modern Browsers */
-         url('./fonts/ShareTechMono.woff') format('woff'), /* Pretty Modern Browsers */
-         url('./fonts/ShareTechMono.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('./fonts/ShareTechMono.svg#ShareTechMono') format('svg'); /* Legacy iOS */
+         url('${eot}?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url(${woff2}) format('woff2'), /* Super Modern Browsers */
+         url(${woff}) format('woff'), /* Pretty Modern Browsers */
+         url(${ttf})  format('truetype'), /* Safari, Android, iOS */
+         url(${svg}#ShareTechMono') format('svg'); /* Legacy iOS */
     font-style: normal;
     font-weight: 300;
     font-display: fallback;
