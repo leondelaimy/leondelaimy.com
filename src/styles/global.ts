@@ -1,11 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 import { ITheme } from '@styles'
-import ShareTechMono from './fonts/ShareTechMono-Regular.ttf'
 
 export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
   @font-face {
     font-family: 'Share Tech Mono';
-    src: url(${ShareTechMono}) format('ttf');
+    src: url('./fonts/ShareTechMono.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/ShareTechMono.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/ShareTechMono.svg#ShareTechMono') format('svg'); /* Legacy iOS */
+         url('./fonts/ShareTechMono.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/ShareTechMono.woff') format('woff'), /* Pretty Modern Browsers */
+         url('./fonts/ShareTechMono.ttf')  format('truetype') /* Safari, Android, iOS */
     font-style: normal;
     font-weight: 300;
     font-display: fallback;
