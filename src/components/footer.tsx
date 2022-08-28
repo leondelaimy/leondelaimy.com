@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
     <StyledFooter>
       <div className="icons">
         <StyledIcon>
-          <a href="https://github.com/leraq" target="_blank" rel="noreferrer">
+          <a href="https://github.com/leondelaimy" target="_blank" rel="noreferrer">
             <GitHubIcon />
           </a>
         </StyledIcon>
