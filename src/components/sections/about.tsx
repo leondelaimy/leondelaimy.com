@@ -24,7 +24,7 @@ const StyledAbout = styled.section`
   }
 
   p {
-    max-width: 300px;
+    max-width: 303px;
     padding: 0 30px 0 30px;
     line-height: 1.8;
   }
@@ -37,8 +37,8 @@ export const About: React.FC = () => {
         <div>
           <AboutTitle headingLevel="h4">About me</AboutTitle>
           <p>
-            I&apos;m a software engineer based in Manchester, passionate about science and tech. I&apos;m currently
-            working as a consultant with&nbsp;
+            Software engineer based in Manchester, passionate about music, science and tech. I&apos;m currently working
+            as a consultant with
             <a href="https://www.infinityworks.com" target="_blank" rel="noreferrer">
               Infinity Works
             </a>
