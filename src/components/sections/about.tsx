@@ -27,6 +27,15 @@ const StyledAbout = styled.section`
     display: inline;
   }
 
+  a.music {
+    color: ${({ theme }) => theme.colors.lightGrey};
+  }
+
+  a.music:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   p {
     max-width: 300px;
     padding: 0 30px 0 30px;
@@ -42,10 +51,10 @@ export const About: React.FC = () => {
           <AboutTitle headingLevel="h4">About me</AboutTitle>
           <p>
             Software engineer based in Manchester UK, passionate about{' '}
-            <a href="https://leraq.net" target="_blank" rel="noreferrer">
-              music{' '}
+            <a className="music" href="https://leraq.net" target="_blank" rel="noreferrer">
+              music
             </a>
-            science and tech. I&apos;m currently working as a consultant with{' '}
+            , science and tech. I&apos;m currently working as a consultant with{' '}
             <a href="https://www.infinityworks.com" target="_blank" rel="noreferrer">
               Infinity Works
             </a>
