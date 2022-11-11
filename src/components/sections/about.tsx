@@ -33,7 +33,7 @@ const StyledAbout = styled.section`
 
   a.music:hover {
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-underline-position: under;
   }
 
   p {
