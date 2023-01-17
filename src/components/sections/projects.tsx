@@ -1,8 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Title } from '@components'
-import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
+
+const releases = [
+  {
+    name: 'Interlinked',
+    url: 'https://leraq.bandcamp.com/album/interlinked',
+    year: 'Dec 2022',
+  },
+  {
+    name: 'Unseen Worlds',
+    url: 'https://leraq.bandcamp.com/album/unseen-worlds-3',
+    year: 'Mar 2021',
+  },
+  {
+    name: 'Mutant',
+    url: 'https://leraq.bandcamp.com/album/mutant',
+    year: 'Sep 2020',
+  },
+]
 
 const ProjectsTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
@@ -10,8 +26,25 @@ const ProjectsTitle = styled(Title)`
   margin: 15px auto;
 `
 
-const B2B = styled(Title)`
-  padding: 0 30px 0 30px;
+const Leraq = styled(Title)`
+  padding: 0 15px 30px 30px;
+  margin: 0;
+`
+
+const Discography = styled(Title)`
+  padding: 0 15px 30px 30px;
+  margin: 0;
+  font-weight: normal;
+`
+
+const Year = styled(Title)`
+  padding: 0 15px 0 30px;
+  margin: 0;
+  font-weight: normal;
+`
+
+const Release = styled(Title)`
+  padding: 0 0 20px 0;
   margin: 0;
 `
 
@@ -25,79 +58,107 @@ const StyledProjects = styled.section`
   .projects-wrapper {
     display: flex;
     flex-wrap: wrap;
+    gap: 3rem;
+    padding: 10px;
+  }
+
+  .discography {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .year {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`
+
+const StyledMusic = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`
+
+const StyledPlayer = styled.div`
+  iframe {
+    width: 400px;
+    height: 400px;
+    border: 0;
+  }
+
+  @media only screen and (max-width: 843px) {
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
-  }
 
-  p {
-    max-width: 300px;
-    padding: 0 30px 0 30px;
-    line-height: 1.8;
-  }
-`
-
-const StyledImage = styled.div`
-  .img {
-    border: 30px solid ${({ theme }) => theme.colors.zimaBlue};
-    border-left: 5px solid ${({ theme }) => theme.colors.zimaBlue};
-    border-right: 5px solid ${({ theme }) => theme.colors.zimaBlue};
-    border-bottom: 15px solid ${({ theme }) => theme.colors.zimaBlue};
-    clip-path: polygon(
-      0px 25px,
-      26px 0px,
-      calc(60% - 25px) 0px,
-      60% 25px,
-      100% 25px,
-      100% calc(100% - 10px),
-      calc(100% - 15px) calc(100% - 10px),
-      calc(80% - 10px) calc(100% - 10px),
-      calc(80% - 15px) calc(100% - 0px),
-      10px calc(100% - 0px),
-      0% calc(100% - 10px)
-    );
-    background-color: ${({ theme }) => theme.background};
-  }
-`
-
-const query = graphql`
-  query {
-    fileName: file(relativePath: { eq: "b2b-icon.png" }) {
-      childImageSharp {
-        gatsbyImageData(width: 300, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-      }
+    iframe {
+      width: 310px;
+      height: 310px;
     }
   }
 `
 
 export const Projects: React.FC = () => {
-  const data = useStaticQuery(query)
-  const image = getImage(data.fileName) as IGatsbyImageData
   return (
     <StyledProjects id="projects">
       <div className="projects-wrapper">
-        <StyledImage>
-          <GatsbyImage image={image} className="img" alt="b2b" />
-        </StyledImage>
-        <div>
+        <div className="discography">
           <ProjectsTitle headingLevel="h4">Projects</ProjectsTitle>
-          <B2BLink />
-          <p>
-            <b>Share tracks with friends</b>
-          </p>
-          <p>Full stack web application with React frontend, Golang API & PostgreSQL database</p>
+          <LeraqLink />
+          <Discography headingLevel="h5">Discography</Discography>
+          {releases.map((release, i) => {
+            return (
+              <div key={i}>
+                <div className="year">
+                  <div className="release">
+                    <Year headingLevel="h5">{release.year}</Year>
+                  </div>
+                  <ReleaseLink name={release.name} url={release.url} />
+                </div>
+              </div>
+            )
+          })}
         </div>
+        <StyledMusic />
+        <StyledPlayer>
+          <iframe
+            title="Interlinked"
+            src="https://bandcamp.com/EmbeddedPlayer/album=3627805310/size=large/bgcol=333333/linkcol=8dc9f4/minimal=true/transparent=true/"
+            seamless
+          >
+            <a href="https://leraq.bandcamp.com/album/interlinked">Interlinked by Leraq</a>
+          </iframe>
+        </StyledPlayer>
+        <StyledMusic />
       </div>
     </StyledProjects>
   )
 }
 
-const B2BLink = () => {
+const LeraqLink = () => {
   return (
-    <B2B headingLevel="h5">
-      <a href="https://b2b-testing-95cff.web.app" target="_blank" rel="noreferrer">
-        B2B
+    <Leraq headingLevel="h4">
+      <a href="https://leraq.net" target="_blank" rel="noreferrer">
+        Leraq
       </a>
-    </B2B>
+    </Leraq>
+  )
+}
+
+interface IReleaseLinkProps {
+  name: string
+  url: string
+}
+
+const ReleaseLink = ({ name, url }: IReleaseLinkProps) => {
+  return (
+    <Release headingLevel="h5">
+      <a href={url} target="_blank" rel="noreferrer">
+        {name}
+      </a>
+    </Release>
   )
 }
