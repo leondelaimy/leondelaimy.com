@@ -46,13 +46,14 @@ const StyledProjects = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
   min-height: 100vh;
 
   .projects-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
     padding: 10px;
   }
 
@@ -60,19 +61,13 @@ const StyledProjects = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 300px;
   }
 
   .year {
     display: flex;
     flex-wrap: wrap;
   }
-`
-
-const StyledMusic = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 `
 
 const StyledPlayer = styled.div`
@@ -101,13 +96,17 @@ export const Projects: React.FC = () => {
       <div className="projects-wrapper">
         <div className="discography">
           <ProjectsTitle headingLevel="h4">Projects</ProjectsTitle>
-          <LeraqLink />
+          <Leraq headingLevel="h4">
+            <a href="https://leraq.net" target="_blank" rel="noreferrer">
+              Leraq
+            </a>
+          </Leraq>
           {releases.map((release, i) => {
             return (
               <div key={i}>
                 <div className="year">
                   <div className="release">
-                    <Year headingLevel="h5">{release.year}</Year>
+                    <Year headingLevel="h6">{release.year}</Year>
                   </div>
                   <ReleaseLink name={release.name} url={release.url} />
                 </div>
@@ -115,7 +114,6 @@ export const Projects: React.FC = () => {
             )
           })}
         </div>
-        <StyledMusic />
         <StyledPlayer>
           <iframe
             title="Interlinked"
@@ -125,19 +123,8 @@ export const Projects: React.FC = () => {
             <a href="https://leraq.bandcamp.com/album/interlinked">Interlinked by Leraq</a>
           </iframe>
         </StyledPlayer>
-        <StyledMusic />
       </div>
     </StyledProjects>
-  )
-}
-
-const LeraqLink = () => {
-  return (
-    <Leraq headingLevel="h4">
-      <a href="https://leraq.net" target="_blank" rel="noreferrer">
-        Leraq
-      </a>
-    </Leraq>
   )
 }
 
@@ -148,7 +135,7 @@ interface IReleaseLinkProps {
 
 const ReleaseLink = ({ name, url }: IReleaseLinkProps) => {
   return (
-    <Release headingLevel="h5">
+    <Release headingLevel="h6">
       <a href={url} target="_blank" rel="noreferrer">
         {name}
       </a>
