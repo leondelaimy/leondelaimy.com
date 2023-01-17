@@ -62,6 +62,7 @@ const StyledExperience = styled.section`
 
   .experience-wrapper {
     margin: 20px 0 0 0;
+    padding: 10px;
   }
 
   .job {
@@ -94,27 +95,25 @@ const StyledExperience = styled.section`
 export const Experience: React.FC = () => {
   return (
     <StyledExperience id="experience">
-      <div>
+      <div className="experience-wrapper">
         <ExperienceTitle headingLevel="h4">Experience</ExperienceTitle>
-        <div className="experience-wrapper">
-          {experience.map((job, i) => {
-            return (
-              <div key={i}>
-                <div className="job">
-                  <div className="position">
-                    <Position headingLevel="h5">{job.position}</Position>
-                  </div>
-                  <ExperienceLink name={job.name} url={job.url} />
+        {experience.map((job, i) => {
+          return (
+            <div key={i}>
+              <div className="job">
+                <div className="position">
+                  <Position headingLevel="h5">{job.position}</Position>
                 </div>
-                <div className="date">
-                  <p>{job.dates}</p>
-                </div>
+                <ExperienceLink name={job.name} url={job.url} />
               </div>
-            )
-          })}
-        </div>
+              <div className="date">
+                <p>{job.dates}</p>
+              </div>
+            </div>
+          )
+        })}
       </div>
-      <CVBtn show={false} />
+      <CVBtn show={true} />
     </StyledExperience>
   )
 }
