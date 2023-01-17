@@ -108,7 +108,7 @@ export const Projects: React.FC = () => {
         <div className="discography">
           <ProjectsTitle headingLevel="h4">Projects</ProjectsTitle>
           <LeraqLink />
-          <Discography headingLevel="h5">Discography</Discography>
+          <Discography headingLevel="h5">Electronic music</Discography>
           {releases.map((release, i) => {
             return (
               <div key={i}>

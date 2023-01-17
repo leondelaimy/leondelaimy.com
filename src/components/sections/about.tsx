@@ -82,7 +82,7 @@ export const About: React.FC = () => {
           <div>
             <Header />
             <p>
-              I&apos;m a software engineer & artist with an interest in science, audio-visuals & generative art.
+              I&apos;m a software engineer & artist with an interest in audio-visuals, generative art & science.
               I&apos;m currently working as a consultant with{' '}
               <a href="https://www.infinityworks.com" target="_blank" rel="noreferrer">
                 Infinity Works
