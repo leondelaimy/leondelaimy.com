@@ -8,5 +8,5 @@
   My personal website written in <a href="https://reactjs.org">React</a>, built using <a href="https://www.gatsbyjs.com/why-gatsby/">Gatsby</a> and hosted with <a href="https://firebase.google.com">Firebase</a></p>
 
 <div align="center">
-  <img width="600" src="https://user-images.githubusercontent.com/54955669/212878294-76729a9d-c36a-4b56-ac1a-96784533432c.png">
+  <img width="600" src="https://user-images.githubusercontent.com/54955669/212993328-1e32b352-eae0-40a5-82c9-71bd58e5a0ed.png">
 </div>
