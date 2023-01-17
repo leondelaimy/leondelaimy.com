@@ -32,22 +32,28 @@ export const Contact: React.FC = () => {
   return (
     <StyledContact id="contact">
       <ContactTitle headingLevel="h4">Contact me</ContactTitle>
-      <p>Have any questions and want to contact me?</p>
-      <GetInTouchBtn />
+      <p>Have any questions and want to contact me? Ping me an email</p>
+      <CVBtn show={true} />
     </StyledContact>
   )
 }
 
-const GetInTouchBtn = () => {
-  return (
-    <StyledButton primary>
-      <div className="btn-wrapper">
-        <ul>
-          <a href="mailto:leondel.coding@gmail.com">
-            <li>Get in touch</li>
-          </a>
-        </ul>
-      </div>
-    </StyledButton>
-  )
+interface ICVBtnProps {
+  show: boolean
+}
+
+const CVBtn = ({ show }: ICVBtnProps) => {
+  return show ? (
+    <>
+      <StyledButton primary>
+        <div className="btn-wrapper">
+          <ul>
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+              <li>CV</li>
+            </a>
+          </ul>
+        </div>
+      </StyledButton>
+    </>
+  ) : null
 }
