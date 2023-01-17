@@ -4,12 +4,16 @@ import { StyledButton } from '@styles'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { animated } from '@react-spring/web'
 import { useSpring } from '@react-spring/core'
-import { ArrowDownIcon, ArrowUpIcon } from '@components'
+import { MenuIcon } from '@components'
 
 const routes = [
   {
     name: 'About',
     route: '#about',
+  },
+  {
+    name: 'Projects',
+    route: '#projects',
   },
   {
     name: 'Experience',
@@ -23,20 +27,25 @@ const routes = [
 
 const StyledNav = styled.nav`
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 99;
+
+  @media only screen and (max-width: 843px) {
+    position: fixed;
+  }
 
   .menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: right;
     position: fixed;
     background-color: ${({ theme }) => theme.background};
-    height: 100%;
     width: 100%;
     top: 0;
     overflow: hidden;
+    border-bottom: 0.5px dotted ${({ theme }) => theme.colors.zimaBlue};
   }
 `
 
@@ -45,6 +54,20 @@ const StyledButtons = styled(StyledButton)`
   flex: 1;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (min-width: 843px) {
+    .btn-wrapper ul {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .btn-wrapper ul li {
+      margin: 0;
+    }
+  }
 
   .btn-wrapper ul li {
     text-shadow: none;
@@ -57,6 +80,14 @@ const StyledButtons = styled(StyledButton)`
 `
 
 const StyledIcon = styled.div`
+  @media only screen and (min-width: 843px) {
+    display: none;
+  }
+
+  .icon {
+    text-align: end;
+  }
+
   svg {
     fill: ${({ theme }) => theme.colors.zimaBlue};
     padding: 5px;
@@ -71,24 +102,26 @@ const StyledIcon = styled.div`
 interface INavProps {
   menu: boolean
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+  isMobile: boolean
 }
 
-export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen }) => {
+export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
   const menuAnimation = useSpring({
     transform: menu ? `translateY(0)` : `translateY(-100%)`,
     opacity: menu ? 1 : 0,
   })
+
   return (
     <StyledNav id="nav">
       <StyledIcon>
-        <button onClick={() => setMenuOpen(true)}>
-          <ArrowDownIcon />
+        <button className="icon" onClick={() => setMenuOpen(true)}>
+          <MenuIcon />
         </button>
       </StyledIcon>
       <animated.div className="menu" style={menuAnimation}>
         <StyledIcon>
-          <button onClick={() => setMenuOpen(false)}>
-            <ArrowUpIcon />
+          <button className="icon" onClick={() => setMenuOpen(false)}>
+            <MenuIcon />
           </button>
         </StyledIcon>
         <StyledButtons>
@@ -99,7 +132,7 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen }) => {
                   <li
                     key={i}
                     tabIndex={i}
-                    onClick={() => handleNavigation(route, setMenuOpen)}
+                    onClick={() => handleNavigation(route, setMenuOpen, isMobile)}
                     onKeyDown={() => null}
                     role="button" // eslint-disable-line jsx-a11y/no-noninteractive-element-to-interactive-role
                   >
@@ -115,7 +148,11 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen }) => {
   )
 }
 
-const handleNavigation = (route: string, setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>) => {
-  setMenuOpen(false)
+const handleNavigation = (
+  route: string,
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  isMobile: boolean
+) => {
+  isMobile && setMenuOpen(false)
   return scrollTo(route)
 }
