@@ -31,12 +31,6 @@ const Leraq = styled(Title)`
   margin: 0;
 `
 
-const Discography = styled(Title)`
-  padding: 0 15px 30px 30px;
-  margin: 0;
-  font-weight: normal;
-`
-
 const Year = styled(Title)`
   padding: 0 15px 0 30px;
   margin: 0;
@@ -108,7 +102,6 @@ export const Projects: React.FC = () => {
         <div className="discography">
           <ProjectsTitle headingLevel="h4">Projects</ProjectsTitle>
           <LeraqLink />
-          <Discography headingLevel="h5">Electronic music</Discography>
           {releases.map((release, i) => {
             return (
               <div key={i}>
