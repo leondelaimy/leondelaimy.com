@@ -27,8 +27,14 @@ const ProjectsTitle = styled(Title)`
 `
 
 const Leraq = styled(Title)`
-  padding: 0 15px 30px 30px;
+  padding: 0 15px 0 30px;
   margin: 0;
+`
+
+const Discography = styled(Title)`
+  padding: 0 0 15px 30px;
+  margin: 0;
+  font-weight: normal;
 `
 
 const Year = styled(Title)`
@@ -53,7 +59,7 @@ const StyledProjects = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem;
     padding: 10px;
   }
 
@@ -61,12 +67,17 @@ const StyledProjects = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 300px;
   }
 
   .year {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  p {
+    padding: 0 30px 15px 30px;
+    max-width: 400px;
+    line-height: 1.8;
   }
 `
 
@@ -101,6 +112,11 @@ export const Projects: React.FC = () => {
               Leraq
             </a>
           </Leraq>
+          <p>
+            Electronic music alias, created using a mix of hardware & software synths hooked up to Ableton. Artworks
+            made using TouchDesigner
+          </p>
+          <Discography headingLevel="h6">Discography</Discography>
           {releases.map((release, i) => {
             return (
               <div key={i}>
