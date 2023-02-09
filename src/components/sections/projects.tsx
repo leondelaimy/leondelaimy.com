@@ -113,8 +113,8 @@ export const Projects: React.FC = () => {
             </a>
           </Leraq>
           <p>
-            Electronic music alias, created using a mix of hardware & software synths hooked up to Ableton. Artworks
-            made using TouchDesigner
+            Electronic music alias. Created using a mix of hardware & software synthesizers connected to Ableton.
+            Artworks made using TouchDesigner
           </p>
           <Discography headingLevel="h6">Discography</Discography>
           {releases.map((release, i) => {
