@@ -33,7 +33,7 @@ const StyledAbout = styled.section`
   }
 
   p {
-    max-width: 400px;
+    max-width: 430px;
     padding: 0 30px 0 30px;
     line-height: 1.8;
   }
@@ -83,9 +83,9 @@ export const About: React.FC = () => {
             <Header />
             <p>
               I&apos;m a software engineer & artist with an interest in music, visual arts, technology & science.
-              I&apos;m currently working as a consultant with{' '}
-              <a href="https://www.infinityworks.com" target="_blank" rel="noreferrer">
-                Infinity Works
+              I&apos;m currently working with{' '}
+              <a href="https://knownorigin.io" target="_blank" rel="noreferrer">
+                KnownOrigin
               </a>
             </p>
           </div>

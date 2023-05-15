@@ -18,7 +18,7 @@ const StyledContact = styled.section`
 
   p {
     padding: 0 30px 0 30px;
-    max-width: 400px;
+    max-width: 410px;
     line-height: 1.8;
   }
 
