@@ -85,7 +85,12 @@ export const About: React.FC = () => {
               I&apos;m a software engineer & artist with an interest in music, visual arts, technology & science.
               I&apos;m currently working with{' '}
               <a href="https://knownorigin.io" target="_blank" rel="noreferrer">
-                KnownOrigin
+                KnownOrigin{' '}
+              </a>
+              x
+              <a href="https://www.ebay.co.uk" target="_blank" rel="noreferrer">
+                {' '}
+                eBay
               </a>
             </p>
           </div>
