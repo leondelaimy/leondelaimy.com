@@ -6,7 +6,7 @@ const releases = [
   {
     name: 'Interlinked',
     url: 'https://leraq.bandcamp.com/album/interlinked',
-    year: 'Dec 2022',
+    year: 'Apr 2023',
   },
   {
     name: 'Unseen Worlds',
