@@ -41,7 +41,6 @@ const StyledNav = styled.nav`
     width: 100%;
     top: 0;
     overflow: hidden;
-    border-bottom: 0.5px dotted ${({ theme }) => theme.colors.zimaBlue};
   }
 `
 
