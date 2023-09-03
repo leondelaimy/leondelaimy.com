@@ -76,7 +76,7 @@ const StyledProjects = styled.section`
 
   p {
     padding: 0 30px 15px 30px;
-    max-width: 400px;
+    max-width: 410px;
     line-height: 1.8;
   }
 `
@@ -113,8 +113,8 @@ export const Projects: React.FC = () => {
             </a>
           </Leraq>
           <p>
-            Electronic music alias. Created using a mix of hardware & software drum machines, samplers & synths routed
-            through Ableton. Artworks made using TouchDesigner
+            Electronic music alias. Created using a mix of hardware/software drum machines, samplers & synthesizers -
+            routed through Ableton Live. Artworks created using TouchDesigner
           </p>
           <Discography headingLevel="h6">Discography</Discography>
           {releases.map((release, i) => {

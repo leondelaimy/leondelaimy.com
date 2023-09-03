@@ -33,7 +33,7 @@ const StyledAbout = styled.section`
   }
 
   p {
-    max-width: 430px;
+    max-width: 410px;
     padding: 0 30px 0 30px;
     line-height: 1.8;
   }
@@ -82,8 +82,8 @@ export const About: React.FC = () => {
           <div>
             <Header />
             <p>
-              I&apos;m a software engineer & artist with a passion for music, visual arts, technology & science.
-              I&apos;m currently working with{' '}
+              I&apos;m a software engineer & artist exploring the intersection between music, visual arts, technology &
+              science. I&apos;m currently working with{' '}
               <a href="https://knownorigin.io" target="_blank" rel="noreferrer">
                 KnownOrigin{' '}
               </a>
