@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GitHubIcon, LinkedInIcon } from '@components'
+import { GitHubIcon, LinkedInIcon, TheDotsIcon } from '@components'
 
 const StyledFooter = styled.footer`
   margin: 0 auto;
+  text-align: center;
 
   .icons {
     display: flex;
@@ -30,6 +31,11 @@ export const Footer: React.FC = () => {
         <StyledIcon>
           <a href="https://github.com/leondelaimy" target="_blank" rel="noreferrer">
             <GitHubIcon />
+          </a>
+        </StyledIcon>
+        <StyledIcon>
+          <a href="https://the-dots.com/users/leon-delaimy-1481759" target="_blank" rel="noreferrer">
+            <TheDotsIcon />
           </a>
         </StyledIcon>
         <StyledIcon>
