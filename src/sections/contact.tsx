@@ -36,7 +36,8 @@ export const Contact: React.FC = () => {
         Full stack engineering experience with a degree in Biomedical Sciences. If you would like to contact me, ping me
         an email
       </p>
-      <CVBtn show={true} />
+      <GetInTouchBtn />
+      <CVBtn show={false} />
     </StyledContact>
   )
 }
@@ -59,4 +60,18 @@ const CVBtn = ({ show }: ICVBtnProps) => {
       </StyledButton>
     </>
   ) : null
+}
+
+const GetInTouchBtn = () => {
+  return (
+    <StyledButton primary>
+      <div className="btn-wrapper">
+        <ul>
+          <a href="mailto:leondel.coding@gmail.com">
+            <li>Get in touch</li>
+          </a>
+        </ul>
+      </div>
+    </StyledButton>
+  )
 }
