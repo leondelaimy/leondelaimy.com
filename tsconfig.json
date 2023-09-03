@@ -13,6 +13,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
+      "@sections": ["src/sections"],
       "@components": ["src/components"],
       "@images": ["src/images"],
       "@pages": ["src/pages"],

@@ -41,6 +41,7 @@ module.exports = {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
+          '@sections': path.resolve(__dirname, 'src/sections'),
           '@components': path.resolve(__dirname, 'src/components'),
           '@images': path.resolve(__dirname, 'src/images'),
           '@pages': path.resolve(__dirname, 'src/pages'),

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { PageProps } from 'gatsby'
-import { Layout, Nav, About, Projects, Contact, Footer } from '@components'
+import { About, Projects, Contact } from '@sections'
+import { Layout, Nav, Footer } from '@components'
 import { Trail } from '@animations'
 
 const IndexPage: React.FC<PageProps> = () => {
