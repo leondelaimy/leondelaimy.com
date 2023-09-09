@@ -37,29 +37,8 @@ export const Contact: React.FC = () => {
         an email
       </p>
       <GetInTouchBtn />
-      <CVBtn show={false} />
     </StyledContact>
   )
-}
-
-interface ICVBtnProps {
-  show: boolean
-}
-
-const CVBtn = ({ show }: ICVBtnProps) => {
-  return show ? (
-    <>
-      <StyledButton primary>
-        <div className="btn-wrapper">
-          <ul>
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-              <li>CV</li>
-            </a>
-          </ul>
-        </div>
-      </StyledButton>
-    </>
-  ) : null
 }
 
 const GetInTouchBtn = () => {
