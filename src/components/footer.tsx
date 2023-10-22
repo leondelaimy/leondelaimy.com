@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GitHubIcon, LinkedInIcon } from '@components'
+import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@components'
 
 const StyledFooter = styled.footer`
   margin: 0 auto;
@@ -10,6 +10,16 @@ const StyledFooter = styled.footer`
     display: flex;
     justify-content: center;
     gap: 40px;
+  }
+
+  .copyright {
+    font-size: 14px;
+    opacity: 0.8;
+    padding-top: 3px;
+  }
+
+  .copyright a {
+    display: inline;
   }
 `
 const StyledIcon = styled.div`
@@ -34,12 +44,19 @@ export const Footer: React.FC = () => {
           </a>
         </StyledIcon>
         <StyledIcon>
+          <a href="https://www.instagram.com/leondelaimy" target="_blank" rel="noreferrer">
+            <InstagramIcon />
+          </a>
+        </StyledIcon>
+        <StyledIcon>
           <a href="https://www.linkedin.com/in/leondelaimy" target="_blank" rel="noreferrer">
             <LinkedInIcon />
           </a>
         </StyledIcon>
       </div>
-      <p>Built by Leon Delaimy</p>
+      <p className="copyright">
+        All rights reserved &copy; <a href="https://leondelaimy.com">Leon Delaimy</a>
+      </p>
     </StyledFooter>
   )
 }
