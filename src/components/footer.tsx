@@ -26,8 +26,8 @@ const StyledIcon = styled.div`
   svg {
     fill: ${({ theme }) => theme.colors.zimaBlue};
     padding: 5px;
-    height: 3rem;
-    width: 2.5rem;
+    height: 2.5rem;
+    width: 2rem;
     &:hover {
       fill: ${({ theme }) => theme.colors.pastelRed};
     }
