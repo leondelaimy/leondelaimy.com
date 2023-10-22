@@ -15,11 +15,11 @@ const StyledFooter = styled.footer`
   .copyright {
     font-size: 14px;
     opacity: 0.8;
-    padding-top: 3px;
+    padding: 3px;
   }
 
-  .copyright a {
-    display: inline;
+  .copyright span {
+    color: ${({ theme }) => theme.colors.pastelRed};
   }
 `
 const StyledIcon = styled.div`
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
         </StyledIcon>
       </div>
       <p className="copyright">
-        All rights reserved &copy; <a href="https://leondelaimy.com">Leon Delaimy</a>
+        All rights reserved &copy; <span>Leon Delaimy</span>
       </p>
     </StyledFooter>
   )
