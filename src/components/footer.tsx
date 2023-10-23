@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
           </a>
         </StyledIcon>
         <StyledIcon>
-          <a href="https://www.instagram.com/leondelaimy" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/leon.delaimy" target="_blank" rel="noreferrer">
             <InstagramIcon />
           </a>
         </StyledIcon>
