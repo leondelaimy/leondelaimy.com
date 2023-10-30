@@ -63,6 +63,12 @@ const StyledProjects = styled.section`
     padding: 10px;
   }
 
+  @media (max-width: 843px) {
+    .projects-wrapper {
+      gap: 1rem;
+    }
+  }
+
   .discography {
     display: flex;
     justify-content: center;

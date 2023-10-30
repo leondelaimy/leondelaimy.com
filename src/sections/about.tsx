@@ -19,6 +19,12 @@ const StyledAbout = styled.section`
     padding: 10px;
   }
 
+  @media (max-width: 843px) {
+    .about-wrapper {
+      gap: 2rem;
+    }
+  }
+
   a {
     display: inline;
   }

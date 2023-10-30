@@ -27,6 +27,10 @@ const StyledHeader = styled.header`
   .text {
     margin-left: 1rem;
   }
+
+  @media (max-width: 843px) {
+    gap: 2rem;
+  }
 `
 
 export const Header: React.FC = () => {

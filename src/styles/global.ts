@@ -58,7 +58,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
 
   @media (max-width: 843px) {
     p {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   }
 `

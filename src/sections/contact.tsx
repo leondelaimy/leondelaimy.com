@@ -26,6 +26,12 @@ const StyledContact = styled.section`
     display: flex;
     justify-content: center;
   }
+
+  @media (max-width: 843px) {
+    .btn-wrapper ul {
+      margin: 0;
+    }
+  }
 `
 
 export const Contact: React.FC = () => {
