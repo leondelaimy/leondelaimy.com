@@ -4,7 +4,7 @@ import { StyledButton } from '@styles'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { animated } from '@react-spring/web'
 import { useSpring } from '@react-spring/core'
-import { MenuIcon } from '@components'
+import { Footer, MenuIcon } from '@components'
 
 const routes = [
   {
@@ -42,6 +42,11 @@ const StyledNav = styled.nav`
     top: 0;
     overflow: hidden;
   }
+
+  @media only screen and (max-width: 843px) {
+    .menu {
+      height: 100dvh;
+    }
 `
 
 const StyledButtons = styled(StyledButton)`
@@ -49,6 +54,20 @@ const StyledButtons = styled(StyledButton)`
   flex: 1;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 843px) {
+    display: flex;
+    align-items: flex-start;
+
+    .btn-wrapper ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn-wrapper ul li {
+      margin: 30px;
+    }
+  }
 
   @media only screen and (min-width: 843px) {
     .btn-wrapper ul {
@@ -85,9 +104,9 @@ const StyledIcon = styled.div`
 
   svg {
     fill: ${({ theme }) => theme.colors.zimaBlue};
-    padding: 5px;
-    height: auto;
-    width: 4rem;
+    padding: 10px;
+    height: 3rem;
+    width: 2.5rem;
     &:hover {
       fill: ${({ theme }) => theme.colors.pastelRed};
     }
@@ -138,6 +157,7 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
             </ul>
           </div>
         </StyledButtons>
+        {isMobile && <Footer />}
       </animated.div>
     </StyledNav>
   )
