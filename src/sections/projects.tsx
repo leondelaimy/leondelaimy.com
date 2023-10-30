@@ -101,7 +101,11 @@ const StyledPlayer = styled.div`
   }
 `
 
-export const Projects: React.FC = () => {
+interface ProjectsProps {
+  isMobile: boolean
+}
+
+export const Projects: React.FC<ProjectsProps> = ({ isMobile }) => {
   return (
     <StyledProjects id="projects">
       <div className="projects-wrapper">
@@ -116,19 +120,23 @@ export const Projects: React.FC = () => {
             Electronic music alias. Created using a mix of hardware/software drum machines, samplers & synthesizers -
             routed through Ableton Live. Artworks created using TouchDesigner
           </p>
-          <Discography headingLevel="h6">Discography</Discography>
-          {releases.map((release, i) => {
-            return (
-              <div key={i}>
-                <div className="year">
-                  <div className="release">
-                    <Year headingLevel="h6">{release.year}</Year>
+          {!isMobile && (
+            <>
+              <Discography headingLevel="h6">Discography</Discography>
+              {releases.map((release, i) => {
+                return (
+                  <div key={i}>
+                    <div className="year">
+                      <div className="release">
+                        <Year headingLevel="h6">{release.year}</Year>
+                      </div>
+                      <ReleaseLink name={release.name} url={release.url} />
+                    </div>
                   </div>
-                  <ReleaseLink name={release.name} url={release.url} />
-                </div>
-              </div>
-            )
-          })}
+                )
+              })}
+            </>
+          )}
         </div>
         <StyledPlayer>
           <iframe

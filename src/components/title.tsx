@@ -50,6 +50,10 @@ const StyledHeading = styled.div`
     h6 {
       font-size: 1rem;
     }
+
+    p {
+      font-size: 0.8rem;
+    }
   }
 `
 interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {

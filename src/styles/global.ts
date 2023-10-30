@@ -55,4 +55,10 @@ export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
     cursor: pointer;
     outline: inherit;
   }
+
+  @media (max-width: 843px) {
+    p {
+      font-size: 0.8rem;
+    }
+  }
 `

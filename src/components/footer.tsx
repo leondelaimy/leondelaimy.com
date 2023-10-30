@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   }
 
   .copyright {
-    font-size: 14px;
+    font-size: 0.8rem;
     opacity: 0.8;
     padding: 3px;
   }

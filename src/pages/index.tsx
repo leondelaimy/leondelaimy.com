@@ -28,7 +28,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Trail open={true}>
         <About />
       </Trail>
-      <Projects />
+      <Projects isMobile={isMobile} />
       <Contact />
       <Footer />
     </Layout>
