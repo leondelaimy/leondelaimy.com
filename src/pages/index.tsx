@@ -9,6 +9,8 @@ const IndexPage: React.FC<PageProps> = () => {
   const [width, setWidth] = useState<number>(isBrowser ? window.innerWidth : 0)
 
   const handleWindowSizeChange = () => {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
     setWidth(window.innerWidth)
   }
 

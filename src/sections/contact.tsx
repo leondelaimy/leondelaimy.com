@@ -14,7 +14,7 @@ const StyledContact = styled.section`
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  min-height: calc(100vh - 113px);
+  min-height: calc(var(--vh, 1vh) * 100 - 113px);
 
   p {
     padding: 0 30px 0 30px;
