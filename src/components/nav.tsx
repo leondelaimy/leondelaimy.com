@@ -46,6 +46,7 @@ const StyledNav = styled.nav`
   @media only screen and (max-width: 843px) {
     .menu {
       height: 100dvh;
+      touch-action: none;
     }
 `
 
