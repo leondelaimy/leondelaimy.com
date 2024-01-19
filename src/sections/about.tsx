@@ -8,7 +8,7 @@ const StyledAbout = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 100svh;
+  min-height: 100dvh;
 
   .about-wrapper {
     display: flex;

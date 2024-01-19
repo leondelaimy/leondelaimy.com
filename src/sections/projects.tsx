@@ -52,7 +52,7 @@ const StyledProjects = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 100svh;
+  min-height: 100dvh;
 
   .projects-wrapper {
     display: flex;
