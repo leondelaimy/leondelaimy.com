@@ -6,8 +6,9 @@
 </h1>
 <p align="center">
   My personal website written in <a href="https://reactjs.org">React</a>, built using <a href="https://www.gatsbyjs.com/why-gatsby/">Gatsby</a> and hosted with <a href="https://firebase.google.com">Firebase</a></p>
-
+<br />
 <div align="center">
- <img width="600" src="https://github.com/leondelaimy/leondelaimy.com/assets/54955669/19e48a7c-7a68-4518-bf4d-fbe87b8435c2">
+ <img src="https://github.com/leondelaimy/leondelaimy.com/assets/54955669/5c224d6e-8bea-4206-9202-6f7bb5f4e3f5.png" width="260">
 </div>
 
+ 
