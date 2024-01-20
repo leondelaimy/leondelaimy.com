@@ -4,6 +4,11 @@ import { Title } from '@components'
 
 const releases = [
   {
+    name: 'Zima Blue',
+    url: 'https://leraq.bandcamp.com/album/zima-blue',
+    year: 'Feb 2024',
+  },
+  {
     name: 'Interlinked',
     url: 'https://leraq.bandcamp.com/album/interlinked',
     year: 'Apr 2023',
@@ -38,14 +43,16 @@ const Discography = styled(Title)`
 `
 
 const Year = styled(Title)`
-  padding: 0 15px 0 30px;
+  padding: 0 10px 0 30px;
   margin: 0;
   font-weight: normal;
+  font-size: 14px !important;
 `
 
 const Release = styled(Title)`
-  padding: 0 0 20px 0;
+  padding: 0 0 10px 0;
   margin: 0;
+  font-size: 14px !important;
 `
 
 const StyledProjects = styled.section`
