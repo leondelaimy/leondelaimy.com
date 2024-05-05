@@ -29,7 +29,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <About />
       </Trail>
       <Projects isMobile={isMobile} />
-      <Contact />
+      <Contact showCV={true} />
       <Footer />
     </Layout>
   )

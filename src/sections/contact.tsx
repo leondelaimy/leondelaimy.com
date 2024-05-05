@@ -34,7 +34,11 @@ const StyledContact = styled.section`
   }
 `
 
-export const Contact: React.FC = () => {
+interface ContactProps {
+  showCV: boolean
+}
+
+export const Contact: React.FC<ContactProps> = ({ showCV }) => {
   return (
     <StyledContact id="contact">
       <ContactTitle headingLevel="h4">Contact me</ContactTitle>
@@ -42,7 +46,7 @@ export const Contact: React.FC = () => {
         Full stack engineering experience with a degree in Biomedical Sciences. If you would like to contact me, ping me
         an email
       </p>
-      <GetInTouchBtn />
+      {showCV ? <CVBtn /> : <GetInTouchBtn />}
     </StyledContact>
   )
 }
@@ -54,6 +58,20 @@ const GetInTouchBtn = () => {
         <ul>
           <a href="mailto:leondel.coding@gmail.com">
             <li>Get in touch</li>
+          </a>
+        </ul>
+      </div>
+    </StyledButton>
+  )
+}
+
+const CVBtn = () => {
+  return (
+    <StyledButton primary>
+      <div className="btn-wrapper">
+        <ul>
+          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+            <li>CV</li>
           </a>
         </ul>
       </div>
