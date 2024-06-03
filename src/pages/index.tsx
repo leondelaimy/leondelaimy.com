@@ -1,8 +1,10 @@
+// Site layout inspired by https://github.com/bchiang7/v4
+
 import React, { useEffect, useState } from 'react'
 import { PageProps } from 'gatsby'
 import { About, Projects, Contact } from '@sections'
 import { Layout, Nav, Footer } from '@components'
-import { Trail } from '@animations'
+import { CyberRain, Trail } from '@animations'
 
 const IndexPage: React.FC<PageProps> = () => {
   const isBrowser = typeof window !== 'undefined'
@@ -24,6 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
+      {!isMobile && <CyberRain />}
       <Nav menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
         <About />

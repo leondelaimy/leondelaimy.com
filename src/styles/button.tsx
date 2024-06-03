@@ -1,3 +1,5 @@
+// Cyberpunk buttons inspired by https://github.com/lampewebdev/cyberpunk-menu
+
 import styled from 'styled-components'
 
 export const StyledButton = styled.div<{ primary?: boolean }>`

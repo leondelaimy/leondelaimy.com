@@ -38,6 +38,7 @@
     "gatsby-plugin-typescript": "^5.0.0",
     "gatsby-source-filesystem": "^5.0.0",
     "gatsby-transformer-sharp": "^5.0.0",
+    "p5": "^1.9.4",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "@types/p5": "^1.7.6",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "@types/react-helmet": "^6.1.4",

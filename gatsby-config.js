@@ -7,6 +7,9 @@ module.exports = {
     siteUrl: 'https://leondelaimy.com',
     image: '/me-icon.png',
   },
+  // flags: {
+  //   DEV_SSR: true,
+  // },
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',

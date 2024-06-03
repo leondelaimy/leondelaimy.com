@@ -37,7 +37,6 @@ const StyledNav = styled.nav`
     justify-content: center;
     align-items: right;
     position: fixed;
-    background-color: ${({ theme }) => theme.background};
     width: 100%;
     top: 0;
     overflow: hidden;
@@ -47,6 +46,7 @@ const StyledNav = styled.nav`
     .menu {
       height: 100dvh;
       touch-action: none;
+      background-color: ${({ theme }) => theme.background};
     }
 `
 
