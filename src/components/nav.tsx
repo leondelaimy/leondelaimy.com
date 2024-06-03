@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { StyledButton } from '@styles'
 import scrollTo from 'gatsby-plugin-smoothscroll'
@@ -92,6 +92,16 @@ const StyledButtons = styled(StyledButton)`
   .btn-wrapper ul li::after {
     border-color: transparent;
   }
+
+  .btn-wrapper ul li.active::after {
+    border-color: ${({ theme }) => theme.colors.zimaBlue};
+  }
+
+  .btn-wrapper ul li.active {
+    pointer-events: none;
+    color: ${({ theme }) => theme.colors.zimaBlue};
+    border-color: ${({ theme }) => theme.colors.zimaBlue};
+  }
 `
 
 const StyledIcon = styled.div`
@@ -121,10 +131,24 @@ interface INavProps {
 }
 
 export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
+  const [selected, setSelected] = useState<string>('#about')
   const menuAnimation = useSpring({
     transform: menu ? `translateY(0)` : `translateY(-100%)`,
     opacity: menu ? 1 : 0,
   })
+
+  const handleSelect = (route: string) => {
+    setSelected(route)
+  }
+
+  const handleNavigation = (
+    route: string,
+    setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    isMobile: boolean
+  ) => {
+    isMobile && setMenuOpen(false)
+    return scrollTo(route)
+  }
 
   return (
     <StyledNav id="nav">
@@ -147,9 +171,13 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
                   <li
                     key={i}
                     tabIndex={i}
-                    onClick={() => handleNavigation(route, setMenuOpen, isMobile)}
+                    onClick={() => {
+                      handleSelect(route)
+                      handleNavigation(route, setMenuOpen, isMobile)
+                    }}
                     onKeyDown={() => null}
                     role="button" // eslint-disable-line jsx-a11y/no-noninteractive-element-to-interactive-role
+                    className={selected === route ? 'active' : ''}
                   >
                     {name}
                   </li>
@@ -162,13 +190,4 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
       </animated.div>
     </StyledNav>
   )
-}
-
-const handleNavigation = (
-  route: string,
-  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>,
-  isMobile: boolean
-) => {
-  isMobile && setMenuOpen(false)
-  return scrollTo(route)
 }
