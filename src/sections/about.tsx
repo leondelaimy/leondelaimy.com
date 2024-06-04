@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Header } from '@components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import { useInView } from 'react-intersection-observer'
 
 const StyledAbout = styled.section`
   display: flex;
@@ -78,12 +79,26 @@ const query = graphql`
   }
 `
 
-export const About: React.FC = () => {
+interface IAboutProps {
+  selected: string
+  setSelected: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const About: React.FC<IAboutProps> = ({ selected, setSelected }) => {
   const data = useStaticQuery(query)
   const image = getImage(data.fileName) as IGatsbyImageData
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  })
+
+  if (inView && selected !== '#about') {
+    setSelected('#about')
+  }
+
   return (
     <>
-      <StyledAbout id="about">
+      <StyledAbout id="about" ref={ref}>
         <div className="about-wrapper">
           <div>
             <Header />

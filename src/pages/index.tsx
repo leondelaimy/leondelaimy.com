@@ -23,16 +23,17 @@ const IndexPage: React.FC<PageProps> = () => {
 
   const isMobile = width <= 843
   const [menu, setMenuOpen] = useState(isMobile ? false : true)
+  const [selected, setSelected] = useState<string>('')
 
   return (
     <Layout>
       {!isMobile && <CyberRain />}
-      <Nav menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
+      <Nav selected={selected} setSelected={setSelected} menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
-        <About />
+        <About selected={selected} setSelected={setSelected} />
       </Trail>
-      <Projects isMobile={isMobile} />
-      <Contact showCV={true} />
+      <Projects selected={selected} setSelected={setSelected} isMobile={isMobile} />
+      <Contact selected={selected} setSelected={setSelected} showCV={true} />
       <Footer />
     </Layout>
   )

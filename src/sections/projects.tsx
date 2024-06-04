@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Title } from '@components'
+import { useInView } from 'react-intersection-observer'
 
 const releases = [
   {
@@ -114,13 +115,23 @@ const StyledPlayer = styled.div`
   }
 `
 
-interface ProjectsProps {
+interface IProjectsProps {
   isMobile: boolean
+  selected: string
+  setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ isMobile }) => {
+export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMobile }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  })
+
+  if (inView && selected !== '#projects') {
+    setSelected('#projects')
+  }
+
   return (
-    <StyledProjects id="projects">
+    <StyledProjects id="projects" ref={ref}>
       <div className="projects-wrapper">
         <div className="discography">
           <ProjectsTitle headingLevel="h4">Projects</ProjectsTitle>

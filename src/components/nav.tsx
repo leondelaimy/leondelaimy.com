@@ -128,18 +128,15 @@ interface INavProps {
   menu: boolean
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
   isMobile: boolean
+  selected: string
+  setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
-  const [selected, setSelected] = useState<string>('#about')
+export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile, selected, setSelected }) => {
   const menuAnimation = useSpring({
     transform: menu ? `translateY(0)` : `translateY(-100%)`,
     opacity: menu ? 1 : 0,
   })
-
-  const handleSelect = (route: string) => {
-    setSelected(route)
-  }
 
   const handleNavigation = (
     route: string,
@@ -172,7 +169,7 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile }) => {
                     key={i}
                     tabIndex={i}
                     onClick={() => {
-                      handleSelect(route)
+                      setSelected(route)
                       handleNavigation(route, setMenuOpen, isMobile)
                     }}
                     onKeyDown={() => null}

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { StyledButton } from '@styles'
 import { Title } from '@components'
+import { useInView } from 'react-intersection-observer'
 
 const ContactTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
@@ -34,13 +35,23 @@ const StyledContact = styled.section`
   }
 `
 
-interface ContactProps {
+interface IContactProps {
   showCV: boolean
+  selected: string
+  setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const Contact: React.FC<ContactProps> = ({ showCV }) => {
+export const Contact: React.FC<IContactProps> = ({ selected, setSelected, showCV }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.6,
+  })
+
+  if (inView && selected !== '#contact') {
+    setSelected('#contact')
+  }
+
   return (
-    <StyledContact id="contact">
+    <StyledContact id="contact" ref={ref}>
       <ContactTitle headingLevel="h4">Contact me</ContactTitle>
       <p>
         Full stack engineering experience with a degree in Biomedical Sciences. If you would like to contact me, ping me
