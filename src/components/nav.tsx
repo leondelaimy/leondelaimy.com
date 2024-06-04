@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { StyledButton } from '@styles'
 import scrollTo from 'gatsby-plugin-smoothscroll'
