@@ -49,11 +49,11 @@ const sketch = (p: p5) => {
 
     // Create a single stream on the left edge
     leftStream = new Stream(p)
-    leftStream.generateSymbols(symbolSize, p.random(-2000, 0))
+    leftStream.generateSymbols(symbolSize, -50)
 
     // Create a single stream on the right edge
     rightStream = new Stream(p)
-    rightStream.generateSymbols(p.width - symbolSize * 2, p.random(-2000, 0))
+    rightStream.generateSymbols(p.width - symbolSize * 2, -500)
 
     p.textFont('Share Tech Mono')
     p.textSize(symbolSize)
@@ -109,7 +109,7 @@ class Stream {
     this.p = p
     this.symbols = []
     this.totalSymbols = p.round(p.random(5, 35))
-    this.speed = p.random(0, 1) // Slowed down rain effect
+    this.speed = p.random(0.5, 1) // Slowed down rain effect
     this.highlightPosition = 0 // Track the position of the highlight effect
   }
 
