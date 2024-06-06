@@ -118,7 +118,7 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
             Interlinked EP available on vinyl in record stores & prints available on{' '}
             <a href="https://leraq.bandcamp.com/merch">Bandcamp</a>
           </p>
-          <LeraqButton />
+          {!isMobile && <LeraqButton />}
         </div>
         <StyledPlayer>
           <iframe
