@@ -135,7 +135,7 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
     <StyledProjects id="projects" ref={ref}>
       <div className="projects-wrapper">
         <div className="discography">
-          <ProjectsTitle headingLevel="h4">Projects</ProjectsTitle>
+          <ProjectsTitle headingLevel="h4">Music</ProjectsTitle>
           <Leraq headingLevel="h4">
             <a href="https://leraq.net" target="_blank" rel="noreferrer">
               Leraq
