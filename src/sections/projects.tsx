@@ -2,29 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Title } from '@components'
 import { useInView } from 'react-intersection-observer'
-
-const releases = [
-  {
-    name: 'Zima Blue',
-    url: 'https://leraq.bandcamp.com/album/zima-blue',
-    year: 'Feb 2024',
-  },
-  {
-    name: 'Interlinked',
-    url: 'https://leraq.bandcamp.com/album/interlinked',
-    year: 'Apr 2023',
-  },
-  {
-    name: 'Unseen Worlds',
-    url: 'https://leraq.bandcamp.com/album/unseen-worlds-3',
-    year: 'Mar 2021',
-  },
-  {
-    name: 'Mutant',
-    url: 'https://leraq.bandcamp.com/album/mutant',
-    year: 'Sep 2020',
-  },
-]
+import { StyledButton } from '@styles'
 
 const ProjectsTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
@@ -33,27 +11,9 @@ const ProjectsTitle = styled(Title)`
 `
 
 const Leraq = styled(Title)`
+  color: ${({ theme }) => theme.colors.pastelRed};
   padding: 0 15px 0 30px;
   margin: 0;
-`
-
-const Discography = styled(Title)`
-  padding: 0 0 15px 30px;
-  margin: 0;
-  font-weight: normal;
-`
-
-const Year = styled(Title)`
-  padding: 0 10px 0 30px;
-  margin: 0;
-  font-weight: normal;
-  font-size: 14px !important;
-`
-
-const Release = styled(Title)`
-  padding: 0 0 10px 0;
-  margin: 0;
-  font-size: 14px !important;
 `
 
 const StyledProjects = styled.section`
@@ -61,6 +21,21 @@ const StyledProjects = styled.section`
   justify-content: center;
   flex-direction: column;
   min-height: 100dvh;
+
+  a {
+    display: inline;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (max-width: 843px) {
+    .btn-wrapper ul {
+      margin: 0;
+    }
+  }
 
   .projects-wrapper {
     display: flex;
@@ -89,8 +64,8 @@ const StyledProjects = styled.section`
   }
 
   p {
-    padding: 0 30px 15px 30px;
-    max-width: 420px;
+    padding: 0 30px 0px 30px;
+    max-width: 430px;
     line-height: 1.8;
     text-align: justify;
   }
@@ -136,32 +111,14 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
       <div className="projects-wrapper">
         <div className="discography">
           <ProjectsTitle headingLevel="h4">Music</ProjectsTitle>
-          <Leraq headingLevel="h4">
-            <a href="https://leraq.net" target="_blank" rel="noreferrer">
-              Leraq
-            </a>
-          </Leraq>
+          <Leraq headingLevel="h4">Leraq</Leraq>
           <p>
-            Electronic music alias. Created using a mix of hardware/software drum machines, samplers & synthesizers -
-            routed through Ableton Live. Artworks created using TouchDesigner
+            Producer & DJ electronic music alias. Tracks created using a hybrid setup of hardware & software - with drum
+            machines, samplers, & synthesizers routed through Ableton Live. Artworks created using TouchDesigner.
+            Interlinked EP available on vinyl in record stores & prints available on{' '}
+            <a href="https://leraq.bandcamp.com/merch">Bandcamp</a>
           </p>
-          {!isMobile && (
-            <>
-              <Discography headingLevel="h6">Discography</Discography>
-              {releases.map((release, i) => {
-                return (
-                  <div key={i}>
-                    <div className="year">
-                      <div className="release">
-                        <Year headingLevel="h6">{release.year}</Year>
-                      </div>
-                      <ReleaseLink name={release.name} url={release.url} />
-                    </div>
-                  </div>
-                )
-              })}
-            </>
-          )}
+          <LeraqButton />
         </div>
         <StyledPlayer>
           <iframe
@@ -177,17 +134,16 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
   )
 }
 
-interface IReleaseLinkProps {
-  name: string
-  url: string
-}
-
-const ReleaseLink = ({ name, url }: IReleaseLinkProps) => {
+const LeraqButton = () => {
   return (
-    <Release headingLevel="h6">
-      <a href={url} target="_blank" rel="noreferrer">
-        {name}
-      </a>
-    </Release>
+    <StyledButton primary>
+      <div className="btn-wrapper">
+        <ul>
+          <a href="https://leraq.net">
+            <li>Listen</li>
+          </a>
+        </ul>
+      </div>
+    </StyledButton>
   )
 }

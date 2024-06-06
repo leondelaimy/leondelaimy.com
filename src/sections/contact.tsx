@@ -23,7 +23,7 @@ const StyledContact = styled.section`
 
   p {
     padding: 0 30px 0 30px;
-    max-width: 410px;
+    max-width: 430px;
     line-height: 1.8;
     text-align: justify;
   }
@@ -59,8 +59,8 @@ export const Contact: React.FC<IContactProps> = ({ selected, setSelected, showCV
     <StyledContact id="contact" ref={ref}>
       <ContactTitle headingLevel="h4">Get in touch</ContactTitle>
       <p>
-        Full stack engineering experience, with a degree in Biomedical Sciences and a passion for creative coding. If
-        you would like to contact me, ping me an email at{' '}
+        Full stack engineering experience, with a background in Biomedical Sciences & a passion for sound design,
+        interactive installations, creative coding & generative art. For enquiries, contact me at{' '}
         <a href="mailto:leondel.coding@gmail.com">leondel.coding@gmail.com</a>
       </p>
       {showCV ? <CVBtn /> : <GetInTouchBtn />}

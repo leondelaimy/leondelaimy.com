@@ -48,6 +48,7 @@ module.exports = {
           '@styles': path.resolve(__dirname, 'src/styles'),
           '@animations': path.resolve(__dirname, 'src/animations'),
           '@hooks': path.resolve(__dirname, 'src/hooks'),
+          '@config': path.resolve(__dirname, 'config.ts'),
         },
       },
     },

@@ -5,21 +5,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll'
 import { animated } from '@react-spring/web'
 import { useSpring } from '@react-spring/core'
 import { Footer, MenuIcon } from '@components'
-
-const routes = [
-  {
-    name: 'About',
-    route: '#about',
-  },
-  {
-    name: 'Projects',
-    route: '#projects',
-  },
-  {
-    name: 'Contact',
-    route: '#contact',
-  },
-]
+import { config } from '@config'
 
 const StyledNav = styled.nav`
   position: sticky;
@@ -163,7 +149,7 @@ export const Nav: React.FC<INavProps> = ({ menu, setMenuOpen, isMobile, selected
         <StyledButtons>
           <div className="btn-wrapper">
             <ul>
-              {routes.map(({ name, route }, i) => {
+              {config.routes.map(({ name, route }, i) => {
                 return (
                   <li
                     key={i}

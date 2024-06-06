@@ -5,6 +5,7 @@ import { Title } from '@components'
 import { StyledButton } from '@styles'
 
 const ErrorTitle = styled(Title)`
+  color: ${({ theme }) => theme.colors.zimaBlue};
   margin: 0;
   text-align: center;
 `

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "target": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "esnext"],
@@ -19,7 +20,9 @@
       "@pages": ["src/pages"],
       "@styles": ["src/styles"],
       "@animations": ["src/animations"],
-      "@hooks": ["src/hooks"]
+      "@hooks": ["src/hooks"],
+      "@config": ["config.ts"]
+
     }
   },
   "include": ["src/**/*"]

@@ -40,7 +40,7 @@ const StyledAbout = styled.section`
   }
 
   p {
-    max-width: 410px;
+    max-width: 430px;
     padding: 0 30px 0 30px;
     line-height: 1.8;
     text-align: justify;
