@@ -21,6 +21,7 @@ const StyledContact = styled.section`
     padding: 0 30px 0 30px;
     max-width: 410px;
     line-height: 1.8;
+    text-align: justify;
   }
 
   .btn-wrapper {

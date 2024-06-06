@@ -25,5 +25,5 @@ export const theme = {
     darkGrey: '#222222',
     lightGrey: '#c8c8c8',
   },
-  font: 'Share Tech Mono, Monospace',
+  font: 'Rajdhani, Share Tech Mono, monospace',
 }

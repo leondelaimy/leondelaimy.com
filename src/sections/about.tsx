@@ -43,6 +43,7 @@ const StyledAbout = styled.section`
     max-width: 410px;
     padding: 0 30px 0 30px;
     line-height: 1.8;
+    text-align: justify;
   }
 `
 

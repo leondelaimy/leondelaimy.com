@@ -90,8 +90,9 @@ const StyledProjects = styled.section`
 
   p {
     padding: 0 30px 15px 30px;
-    max-width: 410px;
+    max-width: 420px;
     line-height: 1.8;
+    text-align: justify;
   }
 `
 
