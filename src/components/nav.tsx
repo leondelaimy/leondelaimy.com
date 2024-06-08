@@ -4,7 +4,8 @@ import { StyledButton } from '@styles'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { animated } from '@react-spring/web'
 import { useSpring } from '@react-spring/core'
-import { Footer, MenuIcon } from '@components'
+import { Footer } from '@components'
+import { MenuIcon } from '@icons'
 import { config } from '@config'
 
 const StyledNav = styled.nav`

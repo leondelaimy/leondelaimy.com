@@ -49,11 +49,11 @@ const sketch = (p: p5) => {
 
     // Create a single stream on the left edge
     leftStream = new Stream(p)
-    leftStream.generateSymbols(symbolSize, -500)
+    leftStream.generateSymbols(symbolSize, -50)
 
     // Create a single stream on the right edge
     rightStream = new Stream(p)
-    rightStream.generateSymbols(p.width - symbolSize * 2, -1000)
+    rightStream.generateSymbols(p.width - symbolSize * 2, -500)
 
     p.textFont('Share Tech Mono')
     p.textSize(symbolSize)

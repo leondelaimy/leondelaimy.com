@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { PageProps } from 'gatsby'
 import { About, Projects, Contact } from '@sections'
 import { Layout, Nav, Footer } from '@components'
-import { CyberRain, Trail } from '@animations'
+import { Trail } from '@animations'
 
 const IndexPage: React.FC<PageProps> = () => {
   const isBrowser = typeof window !== 'undefined'
@@ -27,7 +27,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      {!isMobile && <CyberRain />}
       <Nav selected={selected} setSelected={setSelected} menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
         <About selected={selected} setSelected={setSelected} />

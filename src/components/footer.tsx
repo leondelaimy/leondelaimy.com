@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@components'
+import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@icons'
 
 const StyledFooter = styled.footer`
   margin: 0 auto;
