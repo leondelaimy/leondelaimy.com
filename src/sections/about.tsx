@@ -106,11 +106,11 @@ export const About: React.FC<IAboutProps> = ({ selected, setSelected }) => {
             <p>
               I&apos;m a software engineer & artist exploring the intersection between music, visual arts, technology &
               science. I&apos;m currently working with{' '}
-              <a href="https://knownorigin.io" target="_blank" rel="noreferrer">
+              <a href="https://knownorigin.io" rel="noreferrer">
                 KnownOrigin{' '}
               </a>
               x
-              <a href="https://www.ebay.co.uk" target="_blank" rel="noreferrer">
+              <a href="https://www.ebay.co.uk" rel="noreferrer">
                 {' '}
                 eBay
               </a>
