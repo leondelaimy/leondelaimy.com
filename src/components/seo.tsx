@@ -13,20 +13,18 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({ title, description, image }) => {
   const { pathname } = useLocation()
 
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultTitle: title
-            defaultDescription: description
-            siteUrl
-            defaultImage: image
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          defaultTitle: title
+          defaultDescription: description
+          siteUrl
+          defaultImage: image
         }
       }
-    `
-  )
+    }
+  `)
 
   const { defaultTitle, defaultDescription, siteUrl, defaultImage } = site.siteMetadata
 

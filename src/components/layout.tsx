@@ -12,7 +12,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children }) => {
     <>
       <SEO />
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
+        <GlobalStyles theme={theme} />
         <Container id="root">{children}</Container>
       </ThemeProvider>
     </>
