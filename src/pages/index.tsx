@@ -5,6 +5,7 @@ import { PageProps } from 'gatsby'
 import { About, Projects, Contact } from '@sections'
 import { Layout, Nav, Footer } from '@components'
 import { Trail } from '@animations'
+import { CyberRain } from '@sketches'
 
 const IndexPage: React.FC<PageProps> = () => {
   const isBrowser = typeof window !== 'undefined'
@@ -27,6 +28,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
+      <CyberRain />
       <Nav selected={selected} setSelected={setSelected} menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
         <About selected={selected} setSelected={setSelected} />
