@@ -28,7 +28,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <CyberRain />
+      {!isMobile && <CyberRain />}
       <Nav selected={selected} setSelected={setSelected} menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
         <About selected={selected} setSelected={setSelected} />
