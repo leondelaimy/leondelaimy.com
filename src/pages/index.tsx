@@ -10,6 +10,7 @@ import { CyberRain } from '@sketches'
 const IndexPage: React.FC<PageProps> = () => {
   const isBrowser = typeof window !== 'undefined'
   const [width, setWidth] = useState<number>(isBrowser ? window.innerWidth : 0)
+  const [easterEgg, setEasterEgg] = useState(false)
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth)
@@ -28,14 +29,14 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      {!isMobile && <CyberRain />}
+      {!isMobile && easterEgg && <CyberRain />}
       <Nav selected={selected} setSelected={setSelected} menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
         <About selected={selected} setSelected={setSelected} />
       </Trail>
       <Projects selected={selected} setSelected={setSelected} isMobile={isMobile} />
       <Contact selected={selected} setSelected={setSelected} showCV={true} />
-      <Footer />
+      {!isMobile ? <Footer setEasterEgg={setEasterEgg}></Footer> : <Footer />}
     </Layout>
   )
 }

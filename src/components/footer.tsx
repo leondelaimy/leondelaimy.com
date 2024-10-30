@@ -21,6 +21,13 @@ const StyledFooter = styled.footer`
   .copyright span {
     color: ${({ theme }) => theme.colors.pastelRed};
   }
+
+  .copyright a {
+    display: inline;
+    &:hover {
+      cursor: crosshair;
+    }
+  }
 `
 const StyledIcon = styled.div`
   svg {
@@ -34,7 +41,11 @@ const StyledIcon = styled.div`
   }
 `
 
-export const Footer: React.FC = () => {
+interface IFooterProps {
+  setEasterEgg?: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const Footer: React.FC<IFooterProps> = ({ setEasterEgg }) => {
   return (
     <StyledFooter>
       <div className="icons">
@@ -55,7 +66,17 @@ export const Footer: React.FC = () => {
         </StyledIcon>
       </div>
       <p className="copyright">
-        All rights reserved &copy; <span>Leon Delaimy</span>
+        All rights reserved &copy;{' '}
+        {setEasterEgg ? (
+          <a // eslint-disable-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/anchor-is-valid
+            role="button"
+            onClick={() => setEasterEgg(true)}
+          >
+            Leon Delaimy
+          </a>
+        ) : (
+          <span>Leon Delaimy</span>
+        )}
       </p>
     </StyledFooter>
   )

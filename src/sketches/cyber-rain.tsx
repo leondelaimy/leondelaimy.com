@@ -45,7 +45,6 @@ let leftStream: Stream, rightStream: Stream
 const sketch = (p: p5) => {
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight)
-    p.background(0)
 
     // Create a single stream on the left edge
     leftStream = new Stream(p)
