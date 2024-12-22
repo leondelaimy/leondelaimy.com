@@ -48,6 +48,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
     font-family: ${({ theme }) => theme.font};
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.colors.lightGrey};
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23222222" stroke="%238DC9F4" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'), auto
   }
 
   p {
