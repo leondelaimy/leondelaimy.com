@@ -25,7 +25,8 @@ const StyledFooter = styled.footer`
   .copyright a {
     display: inline;
     &:hover {
-      cursor: crosshair;
+      cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="%238DC9F4" stroke-width="2"><circle cx="12" cy="12" r="8.5"></circle><path d="M1 12h5M18 12h5M12 6V1.04M12 23v-4.96M11.95 11.95h.1v.1h-.1z"></path></g></svg>'),
+        auto;
     }
   }
 `
