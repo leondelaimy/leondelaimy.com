@@ -49,5 +49,7 @@ export const StyledButton = styled.div<{ primary?: boolean }>`
     color: ${({ theme }) => theme.colors.zimaBlue};
     border-color: ${({ theme }) => theme.colors.zimaBlue};
     transition: all 0.23s linear;
+    cursor: url('data:image/svg+xml,<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><image width="32" height="32" xlink:href="data:image/webp;base64,UklGRroBAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSD4AAAABDzD/ERGCUa3t0B7zTgQZBHBkE0kEUUSwtPPPQ4OI/k8Anw5xVd+tkyB2RWyOXBwZh8Ve+JuAJWGZy138C1ZQOCAAAQAAMAkAnQEqIAAgAAAAACWwAnTNocDen/ir+QHOGbhdncM1/JeYD+Ac5LuAP1V/wH8A9//pAP6B/gPQA9gD0APJ4/YD4AP2Z/0HqlhMSte/ViPBAAD+/5FF//miCCXBI9gsr6IO+St3qefOiG7ie1e2s7V8SIn/s8UhqsgL/+MKIu4wxRlDDoZ3xjtGpnzwjfCyX73aCxvgvB3/26Dxy2Ug///jlgRy+gqBrrPDnp9tjwp7t5dmQKRweJ6wCpBhOeskldJ3fqeEy8ejKCdY7F1jhxsEeQ7jilB70hSNxVx3u3c/+g8vasGPy63e9Z/5a57RH6qHRa4f5/LVvMe/pygAAFBTQUlOAAAAOEJJTQPtAAAAAAAQAEgAAAABAAIASAAAAAEAAjhCSU0EKAAAAAAADAAAAAI/8AAAAAAAADhCSU0EQwAAAAAADlBiZVcBEAAGAGQAAAAA"/></svg>'),
+      auto;
   }
 `
