@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { GitHubIcon, InstagramIcon, LinkedInIcon } from '@icons'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 const StyledFooter = styled.footer`
   margin: 0 auto;
@@ -47,6 +48,11 @@ interface IFooterProps {
 }
 
 export const Footer: React.FC<IFooterProps> = ({ setEasterEgg }) => {
+  const handleBackToTop = (setEasterEgg: React.Dispatch<React.SetStateAction<boolean>>) => {
+    setEasterEgg(true)
+    return scrollTo('#about')
+  }
+
   return (
     <StyledFooter>
       <div className="icons">
@@ -71,7 +77,7 @@ export const Footer: React.FC<IFooterProps> = ({ setEasterEgg }) => {
         {setEasterEgg ? (
           <a // eslint-disable-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/anchor-is-valid
             role="button"
-            onClick={() => setEasterEgg(true)}
+            onClick={() => handleBackToTop(setEasterEgg)}
           >
             Leon Delaimy
           </a>
