@@ -40,7 +40,6 @@ const symbolSize = 10
 const sketch = (p: p5) => {
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight)
-    p.background(0)
 
     let x = 0
     for (let i = 0; i <= p.width / symbolSize; i++) {
