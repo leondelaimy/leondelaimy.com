@@ -29,7 +29,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      {!isMobile && <CyberRain />}
+      <CyberRain symbolSize={isMobile ? 7.5 : 15} highlightSpeed={isMobile ? 1.5 : 2} />
       <Nav selected={selected} setSelected={setSelected} menu={menu} setMenuOpen={setMenuOpen} isMobile={isMobile} />
       <Trail open={true}>
         <About selected={selected} setSelected={setSelected} />
