@@ -97,7 +97,6 @@ const StyledIcon = styled.div`
   }
 
   .icon {
-    padding-right: 10px;
     text-align: end;
   }
 
