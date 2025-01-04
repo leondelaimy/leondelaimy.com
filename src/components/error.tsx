@@ -30,8 +30,7 @@ const StyledHeader = styled.header`
 export const Error: React.FC = () => {
   return (
     <StyledHeader>
-      <ErrorTitle headingLevel="h3">Page not found</ErrorTitle>
-      <p>Sorry, this page does not exist.</p>
+      <ErrorTitle headingLevel="h3">404 ERROR</ErrorTitle>
       <GoBackBtn />
     </StyledHeader>
   )
