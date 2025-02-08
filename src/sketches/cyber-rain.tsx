@@ -3,6 +3,7 @@
 import React, { useRef, useEffect } from 'react'
 import p5 from 'p5'
 import styled from 'styled-components'
+import { matrix_font_cmap } from '../styles/fonts/MatrixCode/matrix-font-cmap'
 
 const SketchWrapper = styled.div`
   position: fixed;
@@ -65,8 +66,9 @@ export const CyberRain: React.FC<ICyberRainProps> = ({ symbolSize, highlightSpee
 
     setToRandomSymbol() {
       if (this.p.frameCount % this.switchInterval === 0) {
-        // Use Katakana characters
-        this.value = String.fromCharCode(0x30a0 + this.p.round(this.p.random(0, 96)))
+        const keys = Object.keys(matrix_font_cmap)
+        const randomKey = keys[Math.floor(Math.random() * keys.length)]
+        this.value = String.fromCharCode(Number(randomKey))
       }
     }
 
@@ -145,7 +147,7 @@ export const CyberRain: React.FC<ICyberRainProps> = ({ symbolSize, highlightSpee
       rightStream = new Stream(p)
       rightStream.generateSymbols(p.width - symbolSize * 2, -500)
 
-      p.textFont('Share Tech Mono')
+      p.textFont('Matrix Code')
       p.textSize(symbolSize)
     }
 

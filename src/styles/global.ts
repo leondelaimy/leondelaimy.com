@@ -8,6 +8,7 @@ import ShareTechMono_svg from './fonts/ShareTechMono/ShareTechMono.svg'
 import RajdhaniMedium_woff from './fonts/Rajdhani/Rajdhani-Medium.woff'
 import RajdhaniMedium_woff2 from './fonts/Rajdhani/Rajdhani-Medium.woff2'
 import RajdhaniRegular_woff2 from './fonts/Rajdhani/Rajdhani-Regular.woff2'
+import MatrixCode_tff from './fonts/MatrixCode/Matrix-Code.ttf'
 
 export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
   @font-face {
@@ -37,6 +38,11 @@ export const GlobalStyles = createGlobalStyle<{ theme: ITheme }>`
       url('${RajdhaniRegular_woff2}') format('woff');
     font-weight: 300;
     font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Matrix Code';
+    src: url('${MatrixCode_tff}') format('truetype');
   }
 
   body::-webkit-scrollbar {
