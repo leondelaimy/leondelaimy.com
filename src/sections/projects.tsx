@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Title } from '@components'
 import { useInView } from 'react-intersection-observer'
 import { StyledButton } from '@styles'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
+import SpringOS from '../videos/SpringOS.mp4'
+import WelcomeMirrors from '../videos/WelcomeMirrors.mp4'
+import CommunityVeil from '../videos/CommunityVeil.mp4'
 
 const ProjectsTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
+  margin: 3rem 0 0 0;
   padding: 0 30px 0 30px;
-  margin: 15px auto;
-`
-
-const Leraq = styled(Title)`
-  color: ${({ theme }) => theme.colors.pastelRed};
-  padding: 0 15px 0 30px;
-  margin: 0;
 `
 
 const StyledProjects = styled.section`
@@ -69,6 +68,13 @@ const StyledProjects = styled.section`
     line-height: 1.8;
     text-align: justify;
   }
+
+  .react-multiple-carousel__arrow {
+    background: none;
+    border: none;
+    width: auto !important;
+    height: auto !important;
+  }
 `
 
 const StyledPlayer = styled.div`
@@ -91,6 +97,56 @@ const StyledPlayer = styled.div`
   }
 `
 
+const StyledVideo = styled.div`
+  .video-square {
+    aspect-ratio: 1 / 1;
+  }
+  video {
+    width: 400px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 30px solid ${({ theme }) => theme.colors.pastelRed};
+    border-left: 5px solid ${({ theme }) => theme.colors.pastelRed};
+    border-right: 5px solid ${({ theme }) => theme.colors.pastelRed};
+    border-bottom: 15px solid ${({ theme }) => theme.colors.pastelRed};
+    clip-path: polygon(
+      0px 25px,
+      26px 0px,
+      calc(60% - 25px) 0px,
+      60% 25px,
+      100% 25px,
+      100% calc(100% - 10px),
+      calc(100% - 15px) calc(100% - 10px),
+      calc(80% - 10px) calc(100% - 10px),
+      calc(80% - 15px) calc(100% - 0px),
+      10px calc(100% - 0px),
+      0% calc(100% - 10px)
+    );
+    background-color: ${({ theme }) => theme.background};
+  }
+
+  @media only screen and (max-width: 843px) {
+    video {
+      width: 300px;
+    }
+  }
+`
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+}
+
 interface IProjectsProps {
   isMobile: boolean
   selected: string
@@ -106,36 +162,82 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
     setSelected('#projects')
   }
 
+  const videos = [SpringOS, WelcomeMirrors, CommunityVeil]
+  const [index, setIndex] = useState(0)
+
   return (
     <StyledProjects id="projects" ref={ref}>
-      <div className="projects-wrapper">
-        <div className="discography">
-          <ProjectsTitle headingLevel="h4">Music</ProjectsTitle>
-          <Leraq headingLevel="h4">Leraq</Leraq>
-          <p>
-            Electronic music alias created using a hybrid setup of hardware & software - with drum machines, samplers, &
-            synthesizers routed through Ableton Live. Artworks were created using TouchDesigner. Interlinked EP is
-            available on vinyl in select
-            <a href="http://www.google.com/search?q=leraq+interlinked+vinyl"> record stores</a> with prints also
-            available on <a href="https://leraq.bandcamp.com/merch">Bandcamp</a>
-            {isMobile && (
-              <>
-                . Listen at <a href="https://leraq.net">leraq.net</a>
-              </>
-            )}
-          </p>
-          {!isMobile && <LeraqButton />}
+      <Carousel
+        responsive={responsive}
+        arrows={true}
+        swipeable={true}
+        draggable={true}
+        autoPlay={false}
+        infinite={true}
+      >
+        <div>
+          <div className="projects-wrapper">
+            <div className="discography">
+              <ProjectsTitle headingLevel="h4">113 Spring</ProjectsTitle>
+              <p>
+                113 Spring is a living space built on an adaptive design system that merges flexible architecture with
+                integrated technology. Spatial Intelligence - powered by{' '}
+                <a href="https://field.io/work/113-spring-springos-spatial-intelligence">SpringOS</a> - creates a
+                responsive environment that senses, learns, and adapts in real time.
+                {isMobile && (
+                  <>
+                    . Find out more at <a href="https://field.io/work/113-spring-living-destination">FIELD.IO</a>
+                  </>
+                )}
+              </p>
+              {!isMobile && <SpringButton />}
+            </div>
+            <StyledPlayer>
+              <StyledVideo>
+                <div className="video-square">
+                  <video
+                    key={index} // force reload when index changes
+                    src={videos[index]}
+                    autoPlay
+                    muted
+                    playsInline
+                    onEnded={() => setIndex((index + 1) % videos.length)}
+                  />
+                </div>
+              </StyledVideo>
+            </StyledPlayer>
+          </div>
         </div>
-        <StyledPlayer>
-          <iframe
-            title="Interlinked"
-            src="https://bandcamp.com/EmbeddedPlayer/album=3627805310/size=large/bgcol=333333/linkcol=8dc9f4/minimal=true/transparent=true/"
-            seamless
-          >
-            <a href="https://leraq.bandcamp.com/album/interlinked">Interlinked by Leraq</a>
-          </iframe>
-        </StyledPlayer>
-      </div>
+        <div>
+          <div className="projects-wrapper">
+            <div className="discography">
+              <ProjectsTitle headingLevel="h4">Leraq</ProjectsTitle>
+              <p>
+                Electronic music alias created using a hybrid setup of hardware & software - with drum machines,
+                samplers, & synthesizers routed through Ableton Live. Artworks were created using TouchDesigner.
+                Interlinked EP is available on vinyl in
+                <a href="http://www.google.com/search?q=leraq+interlinked+vinyl"> record stores</a> with prints also
+                available on <a href="https://leraq.bandcamp.com/merch">Bandcamp</a>
+                {isMobile && (
+                  <>
+                    . Listen at <a href="https://leraq.net">leraq.net</a>
+                  </>
+                )}
+              </p>
+              {!isMobile && <LeraqButton />}
+            </div>
+            <StyledPlayer>
+              <iframe
+                title="Interlinked"
+                src="https://bandcamp.com/EmbeddedPlayer/album=3627805310/size=large/bgcol=333333/linkcol=8dc9f4/minimal=true/transparent=true/"
+                seamless
+              >
+                <a href="https://leraq.bandcamp.com/album/interlinked">Interlinked by Leraq</a>
+              </iframe>
+            </StyledPlayer>
+          </div>
+        </div>
+      </Carousel>
     </StyledProjects>
   )
 }
@@ -147,6 +249,20 @@ const LeraqButton = () => {
         <ul>
           <a href="https://leraq.net">
             <li>Listen</li>
+          </a>
+        </ul>
+      </div>
+    </StyledButton>
+  )
+}
+
+const SpringButton = () => {
+  return (
+    <StyledButton primary>
+      <div className="btn-wrapper">
+        <ul>
+          <a href="https://field.io/work/113-spring-living-destination">
+            <li>Find out more</li>
           </a>
         </ul>
       </div>
