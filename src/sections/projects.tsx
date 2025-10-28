@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { Title } from '@components'
 import { useInView } from 'react-intersection-observer'
 import { StyledButton } from '@styles'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
 import SpringOS from '../videos/SpringOS.mp4'
 
 const ProjectsTitle = styled(Title)`
@@ -130,21 +128,6 @@ const StyledVideo = styled.div`
   }
 `
 
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 1,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 1,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-}
-
 interface IProjectsProps {
   isMobile: boolean
   selected: string
@@ -161,8 +144,8 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
   }
 
   return (
-    <StyledProjects id="projects" ref={ref}>
-      <Carousel responsive={responsive} arrows={true} swipeable={true} autoPlay={false}>
+    <>
+      <StyledProjects id="projects" ref={ref}>
         <div>
           <div className="projects-wrapper">
             <div className="discography">
@@ -189,6 +172,8 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
             </StyledPlayer>
           </div>
         </div>
+      </StyledProjects>
+      <StyledProjects>
         <div>
           <div className="projects-wrapper">
             <div className="discography">
@@ -218,8 +203,8 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
             </StyledPlayer>
           </div>
         </div>
-      </Carousel>
-    </StyledProjects>
+      </StyledProjects>
+    </>
   )
 }
 
