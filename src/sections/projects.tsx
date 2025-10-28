@@ -144,8 +144,8 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
   }
 
   return (
-    <>
-      <StyledProjects id="projects" ref={ref}>
+    <div id="projects" ref={ref}>
+      <StyledProjects>
         <div>
           <div className="projects-wrapper">
             <div className="discography">
@@ -204,7 +204,7 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
           </div>
         </div>
       </StyledProjects>
-    </>
+    </div>
   )
 }
 
