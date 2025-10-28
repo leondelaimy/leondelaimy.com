@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Title } from '@components'
 import { useInView } from 'react-intersection-observer'
@@ -6,8 +6,6 @@ import { StyledButton } from '@styles'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import SpringOS from '../videos/SpringOS.mp4'
-import WelcomeMirrors from '../videos/WelcomeMirrors.mp4'
-import CommunityVeil from '../videos/CommunityVeil.mp4'
 
 const ProjectsTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.zimaBlue};
@@ -162,19 +160,9 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
     setSelected('#projects')
   }
 
-  const videos = [SpringOS, WelcomeMirrors, CommunityVeil]
-  const [index, setIndex] = useState(0)
-
   return (
     <StyledProjects id="projects" ref={ref}>
-      <Carousel
-        responsive={responsive}
-        arrows={true}
-        swipeable={true}
-        draggable={true}
-        autoPlay={false}
-        infinite={true}
-      >
+      <Carousel responsive={responsive} arrows={true} swipeable={true} autoPlay={false}>
         <div>
           <div className="projects-wrapper">
             <div className="discography">
@@ -183,7 +171,7 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
                 113 Spring is a living space built on an adaptive design system that merges flexible architecture with
                 integrated technology. Spatial Intelligence - powered by{' '}
                 <a href="https://field.io/work/113-spring-springos-spatial-intelligence">SpringOS</a> - creates a
-                responsive environment that senses, learns, and adapts in real time.
+                responsive environment that senses, learns, and adapts in real time
                 {isMobile && (
                   <>
                     . Find out more at <a href="https://field.io/work/113-spring-living-destination">FIELD.IO</a>
@@ -195,14 +183,7 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
             <StyledPlayer>
               <StyledVideo>
                 <div className="video-square">
-                  <video
-                    key={index} // force reload when index changes
-                    src={videos[index]}
-                    autoPlay
-                    muted
-                    playsInline
-                    onEnded={() => setIndex((index + 1) % videos.length)}
-                  />
+                  <video src={SpringOS} muted playsInline autoPlay preload="auto" loop />
                 </div>
               </StyledVideo>
             </StyledPlayer>
