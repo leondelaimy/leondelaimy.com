@@ -136,7 +136,7 @@ interface IProjectsProps {
 
 export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMobile }) => {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
   })
 
   if (inView && selected !== '#projects') {

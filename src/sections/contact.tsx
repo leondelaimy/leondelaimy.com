@@ -48,7 +48,7 @@ interface IContactProps {
 
 export const Contact: React.FC<IContactProps> = ({ selected, setSelected, showCV }) => {
   const { ref, inView } = useInView({
-    threshold: 0.6,
+    threshold: 0.7,
   })
 
   if (inView && selected !== '#contact') {
