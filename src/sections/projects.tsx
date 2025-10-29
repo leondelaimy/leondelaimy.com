@@ -11,6 +11,12 @@ const ProjectsTitle = styled(Title)`
   padding: 0 30px 0 30px;
 `
 
+// const ProjectsSubtitle = styled(Title)`
+//   color: ${({ theme }) => theme.colors.pastelRed};
+//   padding: 0 30px 0 30px;
+//   margin: 0;
+// `
+
 const StyledProjects = styled.section`
   display: flex;
   justify-content: center;
