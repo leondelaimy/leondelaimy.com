@@ -185,9 +185,9 @@ export const Projects: React.FC<IProjectsProps> = ({ selected, setSelected, isMo
             <div className="discography">
               <ProjectsTitle headingLevel="h4">Leraq</ProjectsTitle>
               <p>
-                Electronic music alias created using a hybrid setup of hardware & software - with drum machines,
-                samplers, & synthesizers routed through Ableton Live. Artworks were created using TouchDesigner.
-                Interlinked EP is available on vinyl in
+                Electronic music created using a hybrid setup of hardware & software - with drum machines, samplers &
+                synthesizers routed through Ableton Live. Artworks were created using TouchDesigner. Interlinked EP is
+                available on vinyl in
                 <a href="http://www.google.com/search?q=leraq+interlinked+vinyl"> record stores</a> with prints also
                 available on <a href="https://leraq.bandcamp.com/merch">Bandcamp</a>
                 {isMobile && (
