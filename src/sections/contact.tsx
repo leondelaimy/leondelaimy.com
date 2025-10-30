@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { StyledButton } from '@styles'
 import { Title } from '@components'
@@ -38,6 +38,11 @@ const StyledContact = styled.section`
       margin: 0;
     }
   }
+
+  .copied {
+    color: ${({ theme }) => theme.colors.zimaBlue};
+    transition: opacity 0.4s ease;
+  }
 `
 
 interface IContactProps {
@@ -60,8 +65,7 @@ export const Contact: React.FC<IContactProps> = ({ selected, setSelected, showCV
       <ContactTitle headingLevel="h4">Get in touch</ContactTitle>
       <p>
         Full stack software engineering experience with a background in Biomedical Sciences & a passion for sound
-        design, interactive installations, creative coding & generative art. For enquiries, contact me at{' '}
-        <a href="mailto:leondel.coding@gmail.com">leondel.coding@gmail.com</a>
+        design, interactive installations, creative coding & generative art. For enquiries, contact me at <CopyEmail />
       </p>
       {showCV ? <CVBtn /> : <GetInTouchBtn />}
     </StyledContact>
@@ -93,5 +97,33 @@ const CVBtn = () => {
         </ul>
       </div>
     </StyledButton>
+  )
+}
+
+const CopyEmail: React.FC<{ email?: string }> = ({ email = 'leondel.coding@gmail.com' }) => {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async (e: React.MouseEvent) => {
+    e.preventDefault()
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000) // reset after 2s
+    } catch (err) {
+      console.error('Failed to copy: ', err)
+    }
+  }
+
+  return (
+    <span>
+      {copied ? (
+        <span className="copied">email copied to clipboard</span>
+      ) : (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
+        <a href="#" onClick={handleCopy}>
+          {email}
+        </a>
+      )}
+    </span>
   )
 }
