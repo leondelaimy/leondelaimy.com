@@ -2,7 +2,7 @@
 [![CodeQL](https://github.com/leondelaimy/leondelaimy.com/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/leondelaimy/leondelaimy.com/actions/workflows/codeql-analysis.yml)
 
 <h1 align="center">
-  Personal Website
+  [ARCHIVED] Personal Website
 </h1>
 <p align="center">
   personal website written in <a href="https://reactjs.org">React</a>, built using <a href="https://www.gatsbyjs.com/why-gatsby/">Gatsby</a> and hosted with <a href="https://firebase.google.com">Firebase</a></p>
